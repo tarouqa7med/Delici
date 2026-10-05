@@ -1,0 +1,18 @@
+.cursorPointer:hover {
+        cursor: pointer;
+}
+.canvasBtn {
+        padding-block: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        width: 40px;
+        height: 30px;
+}
+.canvasBtn span {
+        width: 30px;
+        height: 2px;
+        background-color: blue;
+}
