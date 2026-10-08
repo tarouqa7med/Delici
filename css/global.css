@@ -1,18 +1,19 @@
+:root {
+        --primaryColor: #0E0D0C;
+        --secondaryColor: #171819;
+        --mainColor: #E4C590;
+}
 .cursorPointer:hover {
         cursor: pointer;
 }
-.canvasBtn {
-        padding-block: 6px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 5px;
-        width: 40px;
-        height: 30px;
+.mainColor {
+        color: var(--mainColor);
 }
-.canvasBtn span {
-        width: 30px;
-        height: 2px;
-        background-color: blue;
+.mainBgColor {
+        background-color: var(--mainColor);
+        background: var(--mainColor);
+}
+*::selection {
+        background-color: var(--mainColor);
+        color: black;
 }

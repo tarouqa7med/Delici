@@ -1,14 +1,885 @@
 
-nav .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: red;
+.loadingPage {
+        z-index: 1000;
 }
-nav .container .ul ul {
+.loadingPage .loading-circle {
+        width: 100px;
+        height: 100px;
+        border: 5px solid white;
+        border-top: 5px solid black;
+        border-radius: 50%;
+        animation: spin 1s linear 0s infinite normal forwards;
+}
+.loadingPage .delici-word {
         display: flex;
+}
+.loadingPage .delici-word span {
+        position: relative;
+        font-weight: light;
+        font-size: 75px;
+        color: transparent;
+        -webkit-text-stroke: 2px black;
+        -ms-text-stroke: 2px black;
+        -moz-text-stroke: 2px black;
+        cursor: default;
+        user-select: none;
+}
+.loadingPage .delici-word span::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        animation: delici 2s linear 0s infinite alternate both;
+}
+.loadingPage .delici-word span:nth-child(1)::before {
+        content: "D";
+        animation-delay: 500ms;
+}
+.loadingPage .delici-word span:nth-child(2)::before {
+        content: "E";
+        animation-delay: 700ms;
+}
+.loadingPage .delici-word span:nth-child(3)::before {
+        content: "L";
+        animation-delay: 900ms;
+}
+.loadingPage .delici-word span:nth-child(4)::before {
+        content: "I";
+        animation-delay: 1100ms;
+}
+.loadingPage .delici-word span:nth-child(5)::before {
+        content: "C";
+        animation-delay: 1300ms;
+}
+.loadingPage .delici-word span:nth-child(6)::before {
+        content: "I";
+        animation-delay: 1500ms;
+}
+nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+}
+nav .container {
+        max-width: 100%;
+}
+nav .container .ul ul li {
+        position: relative;
+}
+nav .container .ul ul li::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 5px;
+        border-top: 1.25px solid var(--mainColor);
+        border-bottom: 1.25px solid var(--mainColor);
+        transition-duration: 500ms;
+}
+nav .container .ul ul li:hover::before,
+nav .container .ul ul li.active::before {
+        width: 100%;
 }
 nav .container .ul ul li a {
-        text-decoration: none;
         color: white;
+        transition-duration: 500ms;
+}
+nav .container .ul ul li:hover a {
+        color: var(--mainColor);
+}
+nav .container .ul ul li.active a {
+        color: var(--mainColor);
+}
+nav .container .canvasBtn {
+        padding-block: 6px;
+        gap: 5px;
+        width: 50px;
+        height: 35px;
+}
+nav .container .canvasBtn:focus {
+        border: none;
+}
+nav .container .canvasBtn span {
+        height: 2px;
+        background-color: white;
+}
+nav .container .canvasBtn span:nth-child(1) {
+        animation: canvasBtn-span 350ms linear 0s infinite alternate both;
+}
+nav .container .canvasBtn span:nth-child(2) {
+        animation: canvasBtn-span 350ms linear 150ms infinite alternate both;
+}
+nav .container .canvasBtn span:nth-child(3) {
+        animation: canvasBtn-span 350ms linear 300ms infinite alternate both;
+}
+.canvas {
+        background-color: #00000040;
+}
+.canvas .canvas-left {
+        position: relative;
+        width: 400px !important;
+        background-color: #0e0d0c;
+        background-image: url("./../images/bg.png");
+}
+.canvas .canvas-left .container .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+}
+.canvas .canvas-left .container .sideBarImage img {
+        width: 150px;
+        height: 150px;
+}
+.canvas .canvas-left .container .ul {
+        width: 80%;
+}
+.canvas .canvas-left .container .ul ul li {
+        padding-block: 10px;
+        border-top: 1px solid #A7A7A7;
+        border-bottom: 1px solid #A7A7A7;
+        width: 100%;
+}
+.canvas .canvas-left .container .ul ul li a {
+        position: relative;
+        color: white;
+}
+.canvas .canvas-left .container .ul ul li a:hover {
+        color: var(--mainColor);
+        transition-duration: 500ms;
+}
+.canvas .canvas-left .container .ul ul li.active a::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 35px;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: 2px solid var(--mainColor);
+        animation: canvas-a 5s linear 0s infinite normal forwards;
+}
+.canvas .canvas-left .container .ul ul li.active a {
+        padding-left: 35px;
+}
+.canvas .canvas-left .container .visitUs .layout {
+        color: #A7A7A7;
+        font-size: 14px;
+}
+.canvas .canvas-left .container .square {
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: 2px solid var(--mainColor);
+        animation: spin 5s linear 0s infinite normal forwards;
+}
+.canvas .canvas-left .container .book-request a {
+        font-size: 30px;
+        position: relative;
+}
+.canvas .canvas-left .container .book-request a::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 5px;
+        border-top: 1.25px solid var(--mainColor);
+        border-bottom: 1.25px solid var(--mainColor);
+        transition-duration: 500ms;
+}
+.canvas .canvas-left .container .book-request a:hover::before {
+        width: 100%;
+}
+
+.myCarousel .myCarousel-inner {
+        position: relative;
+        max-width: 100%;
+}
+.myCarousel .myCarousel-inner .myCarousel-item {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+.myCarousel .myCarousel-inner .myCarousel-item.active {
+        display: flex;
+}
+.myCarousel .myCarousel-inner .myCarousel-item:nth-child(1) {
+        background-image: url("./../images/slider-1.jpg");
+}
+.myCarousel .myCarousel-inner .myCarousel-item:nth-child(2) {
+        background-image: url("./../images/slider-2.jpg");
+}
+.myCarousel .myCarousel-inner .myCarousel-item:nth-child(3) {
+        background-image: url("./../images/slider-3.jpg");
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .head h3 {
+        letter-spacing: 2px;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .head img {
+        width: 100px;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body h1 {
+        font-size: 65px;
+        width: 600px;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a {
+        border: 2px solid var(--mainColor);
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a::before,
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: var(--mainColor);
+        transition-duration: 500ms;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a::before {
+        top: -50%;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a::after {
+        top: 100%;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a:hover::before {
+        top: 0%;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a:hover::after {
+        top: 50%;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a span {
+        position: relative;
+        font-size: 14px;
+        letter-spacing: 2px;
+        transition-duration: 500ms;
+        z-index: 1;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body a:hover span {
+        color: black;
+}
+.myCarousel .myCarousel-inner .carouselBtns {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: fit-content;
+}
+.myCarousel .myCarousel-inner .carouselBtns span {
+        width: 10px;
+        height: 10px;
+        background-color: color-mix(in srgb, var(--mainColor) 50%, transparent 50%);
+        border-radius: 50%;
+        transition-duration: 500ms;
+        cursor: pointer;
+}
+.myCarousel .myCarousel-inner .carouselBtns span.active {
+        background-color: var(--mainColor);
+}
+.myCarousel .myCarousel-inner .carouselArrows i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        background-color: transparent;
+        border: 1px solid var(--mainColor);
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+}
+.myCarousel .myCarousel-inner .carouselArrows i::before {
+        transform: rotate(-45deg);
+        color: var(--mainColor);
+}
+.myCarousel .myCarousel-inner .carouselArrows i.prev {
+        left: 40px;
+}
+.myCarousel .myCarousel-inner .carouselArrows i.next {
+        right: 40px;
+}
+.myCarousel .myCarousel-inner .bookNow {
+        position: absolute;
+        bottom: 35px;
+        left: 35px;
+        width: 85px;
+        height: 85px;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+}
+.myCarousel .myCarousel-inner .bookNow:hover {
+        cursor: pointer;
+}
+.myCarousel .myCarousel-inner .bookNow::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid var(--mainColor);
+        animation: spin 5s linear 0s infinite normal forwards;
+}
+.myCarousel .myCarousel-inner .bookNow img {
+        width: 30px;
+}
+.myCarousel .myCarousel-inner .bookNow span {
+        font-size: 10px;
+}
+.aboutUs {
+        position: relative;
+        background-color: var(--primaryColor);
+        padding-bottom: 100px;
+}
+.aboutUs::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("./../images/bg.png");
+}
+.aboutUs > img.background-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        animation: image-top-bottom 2s linear 0s infinite alternate forwards;
+}
+.aboutUs .container {
+        position: relative;
+        z-index: 1;
+}
+.aboutUs .container .head h3 {
+        font-size: 14px;
+        letter-spacing: 2px;
+}
+.aboutUs .container .head img {
+        width: 100px;
+}
+.aboutUs .container .head h4 {
+        font-size: 45px;
+}
+.aboutUs .container .head p {
+        width: 400px;
+}
+.aboutUs .container .body .row .content:nth-child(1) {
+        transform: translateY(-75px) translateX(-25px);
+}
+.aboutUs .container .body .row .content:nth-child(2) {
+        transform: translateY(25px);
+}
+.aboutUs .container .body .row .content:nth-child(3) {
+        transform: translateY(-75px) translateX(25px);
+}
+.aboutUs .container .body .row .content .part1 {
+        transform: translateY(35px);
+        position: relative;
+        overflow: hidden;
+}
+.aboutUs .container .body .row .content .part1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -65%;
+        transform: skew(-25deg);
+        width: 35%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, #ffffff80);
+        transition-duration: 0s;
+        transition-timing-function: linear;
+        z-index: 10;
+}
+.aboutUs .container .body .row .content .part1:hover::before {
+        left: 125%;
+        transition-duration: 500ms;
+}
+.aboutUs .container .body .row .content .part1 img.pattern {
+        width: 150px;
+        transition-duration: 500ms;
+}
+.aboutUs .container .body .row .content .part1:hover img.pattern {
+        transform: rotateY(180deg);
+}
+.aboutUs .container .body .row .content .part1 img.offer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+}
+.aboutUs .container .body .row .content .part2 {
+        margin-top: 65px;
+}
+.aboutUs .container .body .row .content .part2 a {
+        position: relative;
+}
+.aboutUs .container .body .row .content .part2 a::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 5px;
+        border-top: 1.5px solid var(--mainColor);
+        border-bottom: 1.5px solid var(--mainColor);
+        transition-duration: 500ms;
+}
+.aboutUs .container .body .row .content .part2 a:hover::before {
+        width: 100%;
+}
+.OurStory {
+        background-color: var(--secondaryColor);
+}
+.OurStory .container .row .content:first-child .item .head h3 {
+        font-size: 14px;
+        letter-spacing: 2px;
+}
+.OurStory .container .row .content:first-child .item .head img {
+        width: 100px;
+}
+.OurStory .container .row .content:first-child .item .body h2 {
+        font-size: 45px;
+        width: 350px;
+}
+.OurStory .container .row .content:first-child .item .body p {
+        font-size: 15px;
+}
+.OurStory .container .row .content:first-child .item .body a {
+        letter-spacing: 1px;
+        position: relative;
+}
+.OurStory .container .row .content:first-child .item .body a::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 5px;
+        border-top: 1.5px solid var(--mainColor);
+        border-bottom: 1.5px solid var(--mainColor);
+        transition-duration: 500ms;
+}
+.OurStory .container .row .content:first-child .item .body a:hover::before {
+        width: 100%;
+}
+.OurStory .container .row .content:first-child .item .body button {
+        position: relative;
+        background-color: transparent;
+        border: 2px solid var(--mainColor);
+        overflow: hidden;
+}
+.OurStory .container .row .content:first-child .item .body button::before,
+.OurStory .container .row .content:first-child .item .body button::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        background-color: var(--mainColor);
+        width: 100%;
+        height: 50%;
+        transition-duration: 500ms;
+        z-index: 0;
+}
+.OurStory .container .row .content:first-child .item .body button::before {
+        top: -50%;
+}
+.OurStory .container .row .content:first-child .item .body button::after {
+        top: 100%;
+}
+.OurStory .container .row .content:first-child .item .body button:hover::before {
+        top: 0%;
+}
+.OurStory .container .row .content:first-child .item .body button:hover::after {
+        top: 50%;
+}
+.OurStory .container .row .content:first-child .item .body button span {
+        position: relative;
+        z-index: 1;
+        color: var(--mainColor);;
+        letter-spacing: 1px;
+        transition-duration: 500ms;
+}
+.OurStory .container .row .content:first-child .item .body button:hover span {
+        color: black;
+}
+.OurStory .container .row .content:last-child .item {
+        width: 500px;
+        height: 500px;
+        position: relative;
+}
+.OurStory .container .row .content:last-child .item div {
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+}
+.OurStory .container .row .content:last-child .item div.right-image {
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+}
+.OurStory .container .row .content:last-child .item div.right-image img:first-child {
+        position: absolute;
+        animation: spin 10s linear 0s infinite normal forwards;
+}
+.OurStory .container .row .content:last-child .item div.middle-image {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 350px;
+        height: 350px;
+}
+.OurStory .container .row .content:last-child .item div.left-image {
+        width: 250px;
+        height: 250px;
+        bottom: 10px;
+        left: 10px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.OurStory .container .row .content:last-child .item div.left-image img.person {
+        width: 80%;
+}
+.OurStory .container .row .content:last-child .item div.left-image img.pattern {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100%;
+        z-index: -1;
+}
+.SpecialDish {
+        position: relative;
+        background-color: var(--primaryColor);
+}
+.SpecialDish .container {
+        max-width: 100%;
+}
+.SpecialDish::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("./../images/bg.png");
+        z-index: 0;
+}
+.SpecialDish .container {
+        position: relative;
+}
+.SpecialDish .container .row .part1 {
+        background-image: url("./../images/special-dish.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+.SpecialDish .container .row .part2 .item {
+        margin-left: 80px;
+}
+.SpecialDish .container .row .part2 .item .head h3 {
+        font-size: 14px;
+        letter-spacing: 2px;
+}
+.SpecialDish .container .row .part2 .item .head img:first-of-type {
+        width: 100px;
+}
+.SpecialDish .container .row .part2 .item .head img:last-child {
+        position: absolute;
+        top: 0;
+        left: -10%;
+        animation: top-bottom 1s linear 0s infinite alternate both;
+}
+.SpecialDish .container .row .part2 .item .body p {
+        width: 380px;
+        line-height: 32px;
+}
+.SpecialDish .container .row .part2 .item .body .price span:first-child {
+        color: #C9C9C9;
+}
+.SpecialDish .container .row .part2 .item .body a {
+        position: relative;
+        display: inline-block;
+        border: 2px solid var(--mainColor);
+        overflow: hidden;
+}
+.SpecialDish .container .row .part2 .item .body a::before,
+.SpecialDish .container .row .part2 .item .body a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        background-color: var(--mainColor);
+        width: 100%;
+        height: 50%;
+        transition-duration: 500ms;
+}
+.SpecialDish .container .row .part2 .item .body a::before {
+        top: -50%;
+}
+.SpecialDish .container .row .part2 .item .body a::after {
+        top: 100%;
+}
+.SpecialDish .container .row .part2 .item .body a:hover::before {
+        top: 0%;
+}
+.SpecialDish .container .row .part2 .item .body a:hover::after {
+        top: 50%;
+}
+.SpecialDish .container .row .part2 .item .body a span {
+        transition-duration: 500ms;
+}
+.SpecialDish .container .row .part2 .item .body a:hover span {
+        color: black;
+}
+.Menu {
+        background-color: var(--secondaryColor);
+        position: relative;
+        overflow: hidden;
+}
+.Menu .background-images {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+}
+.Menu .background-images img {
+        position: absolute;
+        animation: top-bottom_2 2s linear 0s infinite alternate both;
+}
+.Menu .background-images img:first-child {
+        top: 0;
+        left: 0;
+}
+.Menu .background-images img:last-child {
+        bottom: 0;
+        right: 0;
+}
+.Menu .container {
+        position: relative;
+}
+.Menu .container .head h3 {
+        font-size: 15px;
+        letter-spacing: 2px;
+}
+.Menu .container .head img {
+        width: 100px;
+}
+.Menu .container .head h1 {
+        letter-spacing: 1px;
+        font-size: 45px;
+}
+.Menu .container .body .ul {
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+}
+.Menu .container .body .ul li {
+        position: relative;
+}
+.Menu .container .body .ul li:not(:last-of-type)::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: -36px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid var(--mainColor);
+        animation: spin 4s linear 0s infinite normal forwards;
+}
+.Menu .container .body .ul li a {
+        position: relative;
+        color: white;
+        font-size: 20px;
+}
+.Menu .container .body .ul li.active a {
+        color: var(--mainColor);
+}
+.Menu .container .body .ul li a::before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 5px;
+        background-color: transparent;
+        border-top: 1.5px solid var(--mainColor);
+        border-bottom: 1.5px solid var(--mainColor);
+        transition-duration: 500ms;
+}
+.Menu .container .body .ul li a:hover::before,
+.Menu .container .body .ul li.active a::before {
+        width: 100%;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1 {
+        width: 80px;
+        height: 80px;
+        aspect-ratio: 1/1;
+        position: relative;
+        overflow: hidden;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1::before,
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition-duration: 0s;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1::before {
+        background-image: url("./../images/BF-1.webp");
+        background-position: center;
+        background-size: cover;
+        transition-duration: 500ms;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1:hover::before {
+        transform: scale(1.25);
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1::after {
+        background-color: color-mix(in srgb, var(--mainColor) 50%, transparent 50%);
+        opacity: 0;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1:hover::after {
+        opacity: 1;
+        transition-duration: 500ms;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1 i {
+        opacity: 0;
+        transform: scale(0);
+        transition-duration: 0s;
+        position: relative;
+        z-index: 3;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part1:hover i {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+        transition-duration: 500ms;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part2 {
+        height: 85px;
+        width: 350px !important;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part2 .name-price hr {
+        background-color: transparent !important;
+        height: 5px;
+        border-top: 1.5px solid #F8F9FA;
+        border-bottom: 1.5px solid #F8F9FA;
+}
+.Menu .container .body .content .menu-food .row .col-lg-6 .item .part2 p.description {
+        color: #A7A7A7;
+}
+.OurChefs {
+        background-color: var(--primaryColor);
+        background-image: url("./../images/bg.png");    
+}
+.OurChefs .container .head h3 {
+        font-size: 15px;
+        letter-spacing: 2px;
+}
+.OurChefs .container .head img {
+        width: 100px;
+}
+.OurChefs .container .head h4 {
+        font-size: 45px;
+}
+.OurChefs .container .body .row .col-lg-4 .item {
+        width: 80% !important;
+        position: relative;
+        overflow: hidden;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame {
+        position: relative;
+        overflow: hidden;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame img {
+        transition-duration: 500ms;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame:hover img {
+        transform: rotate(2deg) scale(1.05);
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame .layout {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform: translate(-50%, -50%);
+        transition-duration: 500ms;
+        background-color: #ffffff40;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame:hover .layout {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul {
+        opacity: 0;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame:hover .layout ul {
+        transition-duration: 500ms;
+        transition-delay: 350ms;
+        opacity: 1;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li {
+        width: 35px;
+        height: 35px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(1) a i {
+        color: #1877F2;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(2) a i {
+        color: white;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(3) a i {
+        color: #DD3E5C;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(4) a i {
+        color: #1877F2;
+}
+.OurChefs .container .body .row .col-lg-4 .item .chef-bio h4 {
+        letter-spacing: 3px;
+        font-size: 12px;
+}
+.OurChefs .container .body .row .col-lg-4 .item .chef-bio p {
+        color: #A7A7A7;
+        font-size: 14px;
 }

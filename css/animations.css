@@ -1,0 +1,51 @@
+
+@keyframes spin {
+        from {
+                transform: rotate(0deg);
+        } to {
+                transform: rotate(360deg);
+        }
+}
+@keyframes delici {
+        0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotateY(90deg);
+        } 50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotateY(0deg);
+        } 100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotateY(90deg);
+        }
+}
+@keyframes canvasBtn-span {
+        from {
+                width: 15px
+        } to {
+                width: 30px;
+        }
+}
+@keyframes canvas-a {
+        from {
+                transform: translateY(-50%) translateX(-25px) rotate(0deg);
+        } to {
+                transform: translateY(-50%) translateX(-25px) rotate(360deg);
+        }
+}
+@keyframes image-top-bottom {
+        from {
+                transform: translateY(0px);
+        } to {
+                transform: translateY(50px);
+        }
+}
+@keyframes top-bottom {
+        to {
+                transform: translateY(20px);
+        }
+}
+@keyframes top-bottom_2 {
+        to {
+                transform: translateY(35px);
+        }
+}

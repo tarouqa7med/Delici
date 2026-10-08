@@ -1,0 +1,53 @@
+
+@media screen and (max-width: 371px) {
+        nav .container .ul ul {
+                display: none !important;
+        }
+        .canvas .canvas-left {
+                width: 300px !important;
+        }
+        .canvas .canvas-left .container .visitUs .layout {
+                font-size: 12px;
+        }
+        .canvas .canvas-left .container .book-request a {
+                font-size: 24px;
+        }
+}
+@media screen and (min-width: 371px) and (max-width: 575.98px) {
+        nav .container .ul ul {
+                display: none !important;
+        }
+        .canvas .canvas-left {
+                width: 300px !important;
+        }
+        .canvas .canvas-left .container .visitUs .layout {
+                font-size: 12px;
+        }
+        .canvas .canvas-left .container .book-request a {
+                font-size: 24px;
+        }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+        nav .container .ul ul {
+                display: none !important;
+        }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+        nav .container .ul ul {
+                display: none !important;
+        }
+}
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+        nav .container .ul ul {
+                display: none !important;
+        }
+}
+@media screen and (min-width: 1200px) and (max-width: 1299.98px) {
+        nav .container .ul ul {
+                display: none !important;
+        }
+
+}
+@media screen and (min-width: 1300px) {
+
+}
