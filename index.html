@@ -14,7 +14,7 @@
 </head>
 <body>
 
-        <div class="loadingPage mainBgColor w-100 vh-100 d-flex flex-column  justify-content-center align-items-center">
+        <!-- <div class="loadingPage mainBgColor w-100 vh-100 d-flex flex-column  justify-content-center align-items-center">
                 <div class="loading-circle mb-4">
                 </div>
                 <div class="delici-word d-flex column-gap-4">
@@ -25,7 +25,7 @@
                         <span class="transparent-text">C</span>
                         <span class="transparent-text">I</span>
                 </div>
-        </div>
+        </div> -->
 
         <nav>
                 <div class="container px-4 py-3 d-flex justify-content-between align-items-center">
@@ -66,9 +66,9 @@
         </nav>
 
         <div class="canvas vh-100 overflow-auto text-white">
-                <div class="canvas-left m-0">
+                <div class="canvas-left hide m-0">
                         <div class="container d-flex justify-content-center align-items-center flex-column py-5 w-75">
-                                <i class="fa-regular fa-times-circle cursorPointer text-white close"></i>
+                                <i class="fa-regular fa-times-circle cursorPointer mainColor close" onclick="closeCanvas()"></i>
                                 <div class="logo mb-4">
                                         <img class="img-fluid" src="./images/logo.png" alt="">
                                 </div>
@@ -446,17 +446,15 @@
                         <div class="body pb-4">
                                 <div class="row">
                                         <div class="col-lg-4">
-                                                <div class="item rounded-3">
+                                                <div class="item d-block m-auto rounded-3">
                                                         <div class="frame rounded-3 mb-3">
-                                                                <img class="img-fluid d-block m-auto rounded-3" src="./images/chef-1.jpg" alt="">
-                                                                <div class="layout rounded-3">
-                                                                        <ul class="list-unstyled d-flex justify-content-center align-items-center column-gap-4 w-100">
-                                                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                                                        </ul>
-                                                                </div>
+                                                                <img class="img-fluid d-block m-auto rounded-3 w-100" src="./images/chef-1.jpg" alt="">
+                                                                <ul class="list-unstyled d-flex justify-content-center align-items-center column-gap-4 rounded-3">
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                                                </ul>
                                                         </div>
                                                         <div class="chef-bio">
                                                                 <h3 class="text-light fw-light">Willium Joe</h3>
@@ -466,17 +464,15 @@
                                                 </div>
                                         </div>
                                         <div class="col-lg-4">
-                                                <div class="item rounded-3">
+                                                <div class="item d-block m-auto rounded-3">
                                                         <div class="frame rounded-3 mb-3">
-                                                                <img class="img-fluid d-block m-auto rounded-3" src="./images/chef-2.jpg" alt="">
-                                                                <div class="layout rounded-3">
-                                                                        <ul class="list-unstyled d-flex justify-content-center align-items-center column-gap-4 w-100">
-                                                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                                                        </ul>
-                                                                </div>
+                                                                <img class="img-fluid d-block m-auto rounded-3 w-100" src="./images/chef-2.jpg" alt="">
+                                                                <ul class="list-unstyled d-flex justify-content-center align-items-center column-gap-4 rounded-3">
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                                                </ul>
                                                         </div>
                                                         <div class="chef-bio">
                                                                 <h3 class="text-light fw-light">Steave Den</h3>
@@ -486,17 +482,15 @@
                                                 </div>
                                         </div>
                                         <div class="col-lg-4">
-                                                <div class="item rounded-3">
+                                                <div class="item d-block m-auto rounded-3">
                                                         <div class="frame rounded-3 mb-3">
-                                                                <img class="img-fluid d-block m-auto rounded-3" src="./images/chef-3.png" alt="">
-                                                                <div class="layout rounded-3">
-                                                                        <ul class="list-unstyled d-flex justify-content-center align-items-center column-gap-4 w-100">
-                                                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                                                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                                                        </ul>
-                                                                </div>
+                                                                <img class="img-fluid d-block m-auto rounded-3 w-100" src="./images/chef-3.png" alt="">
+                                                                <ul class="list-unstyled d-flex justify-content-center align-items-center column-gap-4 rounded-3">
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                                                        <li><a class="px-3" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                                                </ul>
                                                         </div>
                                                         <div class="chef-bio">
                                                                 <h3 class="text-light fw-light">Oliver Joe</h3>
@@ -511,32 +505,34 @@
         </section>
 
         <section class="ContactUs" id="ContactUs">
-                <div class="container">
-                        <div class="details">
-                                <img class="img-fluid" src="./images/logo.png" alt="">
-                                <p class="location"><i class="fa-solid fa-location-dot"></i>Delicious City, London 9578, UK</p>
-                                <p class="work-time"><i class="fa-regular fa-clock"></i>Daily : 8.00 am to 10.00 pm</p>
-                                <p class="email"><i class="fa-regular fa-envelope"></i>booking@restaurant.com</p>
-                                <div class="three-squares d-flex column-gap-3">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
+                <div class="container pt-5">
+                        <div class="myCard mt-4 pt-5 d-block m-auto">
+                                <div class="details text-center">
+                                        <img class="img-fluid mb-3" src="./images/logo.png" alt="">
+                                        <p class="location"><i class="fa-solid fa-location-dot"></i>Delicious City, London 9578, UK</p>
+                                        <p class="work-time"><i class="fa-regular fa-clock"></i>Daily : 8.00 am to 10.00 pm</p>
+                                        <p class="email"><i class="fa-regular fa-envelope"></i>booking@restaurant.com</p>
+                                        <div class="three-squares d-flex m-auto column-gap-3 text-center mb-4">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                        </div>
+                                </div>
+                                <div class="form px-5">
+                                        <form action="" method="">
+                                                <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
+                                                        <input class=" px-3 py-2 rounded-3" name="name" type="text" placeholder="Name...">
+                                                        <input class=" px-3 py-2 rounded-3" name="email" type="email" placeholder="Email...">
+                                                </div>
+                                                <textarea class="w-100 mt-2 mb-4 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..."></textarea>
+                                                <button type="submit" class="submitBtn w-100 py-2 rounded-3 mb-5">
+                                                        <span>Send Message</span>
+                                                </button>
+                                        </form>
                                 </div>
                         </div>
-                        <div class="form mb-5">
-                                <form action="">
-                                        <div class="row">
-                                                <input class="col-lg-6" name="name" type="text" placeholder="Name...">
-                                                <input class="col-lg-6" name="email" type="email" placeholder="Email...">
-                                        </div>
-                                        <textarea class="w-100" name="message" id="" placeholder="Message..."></textarea>
-                                        <button type="submit" class="submitBtn">
-                                                <span>Send Message</span>
-                                        </button>
-                                </form>
-                        </div>
-                        <p>© 2026 Restaurant. All Rights Reserved | Created by <span style="color: var(--mainColor);">SemiCode</span></p>
                 </div>
+                <p class="py-5 mb-0 text-center text-light">© 2026 Restaurant. All Rights Reserved | Created by <span style="color: var(--mainColor);">SemiCode</span></p>
         </section>
 
         <section class="MenuModal" id="MenuModal">

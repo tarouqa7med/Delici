@@ -1,6 +1,14 @@
 
 .loadingPage {
+        position: fixed;
+        top: 0;
+        left: 0;
         z-index: 1000;
+        opacity: 1;
+}
+.loadingPage.hide {
+        transition-duration: 500ms;
+        opacity: 0;
 }
 .loadingPage .loading-circle {
         width: 100px;
@@ -119,13 +127,32 @@ nav .container .canvasBtn span:nth-child(3) {
         animation: canvasBtn-span 350ms linear 300ms infinite alternate both;
 }
 .canvas {
-        background-color: #00000040;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        background-color: color-mix(in srgb, var(--mainColor) 50%, transparent 50%);
+        transition-duration: 500ms;
+        opacity: 0;
+        display: none;
+}
+.canvas.active {
+        display: block;
+}
+.canvas.show {
+        opacity: 1;
 }
 .canvas .canvas-left {
         position: relative;
         width: 400px !important;
         background-color: #0e0d0c;
         background-image: url("./../images/bg.png");
+        transition-duration: 500ms;
+}
+.canvas .canvas-left.hide {
+        transform: translateX(-100%);
 }
 .canvas .canvas-left .container .close {
         position: absolute;
@@ -824,10 +851,10 @@ nav .container .canvasBtn span:nth-child(3) {
 .OurChefs .container .body .row .col-lg-4 .item .frame img {
         transition-duration: 500ms;
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame:hover img {
+.OurChefs .container .body .row .col-lg-4 .item:hover .frame img {
         transform: rotate(2deg) scale(1.05);
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame .layout {
+.OurChefs .container .body .row .col-lg-4 .item .frame ul {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -841,20 +868,13 @@ nav .container .canvasBtn span:nth-child(3) {
         align-items: center;
         opacity: 0;
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame:hover .layout {
+.OurChefs .container .body .row .col-lg-4 .item:hover .frame ul {
         width: 100%;
         height: 100%;
-        opacity: 1;
-}
-.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul {
-        opacity: 0;
-}
-.OurChefs .container .body .row .col-lg-4 .item .frame:hover .layout ul {
         transition-duration: 500ms;
-        transition-delay: 350ms;
         opacity: 1;
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li {
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li {
         width: 35px;
         height: 35px;
         border-radius: 8px;
@@ -862,18 +882,41 @@ nav .container .canvasBtn span:nth-child(3) {
         justify-content: center;
         align-items: center;
         background-color: black;
+        transition-duration: 500ms;
+        cursor: pointer;
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(1) a i {
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(1):hover {
+        background-color: #1877F2;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(2):hover {
+        background-color: white;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(3):hover {
+        background-color: #DD3E5C;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(4):hover {
+        background-color: #1877F2;
+}
+.OurChefs .container .body .row .col-lg-4 .item:hover .frame ul li a i {
+        transition-duration: 500ms;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(1) a i {
         color: #1877F2;
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(2) a i {
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(2) a i {
         color: white;
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(3) a i {
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(3) a i {
         color: #DD3E5C;
 }
-.OurChefs .container .body .row .col-lg-4 .item .frame .layout ul li:nth-child(4) a i {
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(4) a i {
         color: #1877F2;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:hover a i {
+        color: white;
+}
+.OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(2):hover a i {
+        color: black;
 }
 .OurChefs .container .body .row .col-lg-4 .item .chef-bio h4 {
         letter-spacing: 3px;
@@ -882,4 +925,97 @@ nav .container .canvasBtn span:nth-child(3) {
 .OurChefs .container .body .row .col-lg-4 .item .chef-bio p {
         color: #A7A7A7;
         font-size: 14px;
+}
+.ContactUs {
+        position: relative;
+        background-image: linear-gradient(#00000080, #00000080), url("./../images/contact-bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+.ContactUs .container .myCard {
+        max-width: 500px;
+        background-image: url("./../images/bg.png");
+        background-color: #171819;
+        color: #C9C9C9;
+        position: relative;
+}
+.ContactUs .container .myCard::before,
+.ContactUs .container .myCard::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 16px;
+        height: 100%;
+        background-image: url("./../images/pattern-9.svg");
+        background-size: 120%;
+}
+.ContactUs .container .myCard::after {
+        right: unset;
+        left: 0;
+}
+.ContactUs .container .myCard .three-squares {
+        width: fit-content;
+}
+.ContactUs .container .myCard .details .three-squares span {
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: 2.5px solid var(--mainColor);
+        animation: spin 5s linear 0s infinite normal forwards;
+}
+.ContactUs .container .myCard .form form .row input {
+        width: 47.5%;
+        background-color: transparent;
+        color: #C9C9C9;
+        border: 1px solid #C9C9C9;
+}
+.ContactUs .container .myCard .form form textarea {
+        height: 150px;
+        background-color: transparent;
+        color: #C9C9C9;
+        border: 1px solid #C9C9C9;
+        resize: none;
+}
+.ContactUs .container .myCard .form form *::placeholder {
+        color: #C9C9C9;
+}
+.ContactUs .container .myCard .form form .submitBtn {
+        background-color: transparent;
+        border: 2px solid var(--mainColor);
+        position: relative;
+        overflow: hidden;
+        transition-duration: 500ms;
+}
+.ContactUs .container .myCard .form form .submitBtn::before,
+.ContactUs .container .myCard .form form .submitBtn::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        background-color: var(--mainColor);
+        width: 100%;
+        height: 50%;
+        transition-duration: 500ms;
+}
+.ContactUs .container .myCard .form form .submitBtn::before {
+        top: -50%;
+}
+.ContactUs .container .myCard .form form .submitBtn::after {
+        top: 100%;
+}
+.ContactUs .container .myCard .form form .submitBtn:hover::before {
+        top: 0%;
+}
+.ContactUs .container .myCard .form form .submitBtn:hover::after {
+        top: 50%;
+}
+.ContactUs .container .myCard .form form .submitBtn span {
+        color: var(--mainColor);
+        transition-duration: 500ms;
+        position: relative;
+        z-index: 1;
+}
+.ContactUs .container .myCard .form form .submitBtn:hover span {
+        color: black;
 }
