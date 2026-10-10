@@ -3,9 +3,9 @@ navbarBgColor();
 navbarHideShow();
 progressBar();
 
-// window.addEventListener("load", function () {
-//         loadingPage();
-// });
+window.addEventListener("DOMContentLoaded", function () {
+        loadingPage();
+});
 
 window.addEventListener("scroll", function () {
 
