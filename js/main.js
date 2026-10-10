@@ -1,25 +1,49 @@
 
+navbarBgColor();
+navbarHideShow();
+progressBar();
+
 // window.addEventListener("load", function () {
 //         loadingPage();
 // });
 
+window.addEventListener("scroll", function () {
 
+        navbarBgColor();
 
-let nav = document.querySelector("nav"),
-        canvasBtn = nav.querySelector(".canvasBtn"),
-        canvas = document.querySelector(".canvas"),
-        canvasContainer = canvas.querySelector(".canvas-left");
-        canvasAnchors = canvas.querySelectorAll(".canvas-left a"),
-        sections = document.querySelectorAll("section, header");
-        sectionsAfter = document.querySelectorAll("section::after, header::after");
+        navbarHideShow();
 
-canvasBtn.addEventListener("click", function () {
-        openCanvas();
+        progressBar();
+
+        sections.forEach(function (section) {
+                updateNavAnchor(section.id);
+        })
+
 })
 
-canvas.addEventListener("click", function () {
-        closeCanvas();
+navAnchors.forEach(function (anchor) {
+        anchor.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                let currentNavLink = nav.querySelector("a.active"),
+                        anchor_id = anchor.getAttribute("href"),
+                        currentSection = document.querySelector(`${anchor_id}`),
+                        sectionTop = currentSection.offsetTop;
+                
+                if (anchor.classList.contains("active")) {
+                        return;
+                }
+                
+                anchor.classList.add("active")
+                currentNavLink.classList.remove("active");
+
+                window.scrollTo(0, sectionTop - nav.clientHeight);
+        })
 })
+
+canvasBtn.addEventListener("click", () => openCanvas())
+
+canvas.addEventListener("click",  () => closeCanvas())
 
 canvasContainer.addEventListener("click", function (event) {
         event.stopPropagation();
@@ -45,10 +69,27 @@ canvasAnchors.forEach(function (a) {
         })
 })
 
+prevBtn.addEventListener("click", function (event) {
 
+        prevBtn.disabled = true;
+        setTimeout( () => prevBtn.disabled = false, 500);
 
-window.addEventListener("scroll", function () {
-        checkScrollNavBgColor();
-        checkScrollNavHide();
+        getPrevCarousel();
+});
 
+nextBtn.addEventListener("click", function () {
+
+        nextBtn.disabled = true;
+        setTimeout( () => nextBtn.disabled = false, 500);
+
+        getNextCarousel();
+});
+
+carouselBtnsArr.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+                carouselBtnsArr.forEach(function (btn) {
+                        btn.disabled = true;
+                        setTimeout( () => btn.disabled = false, 500);
+                })
+        })
 })

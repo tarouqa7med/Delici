@@ -71,6 +71,10 @@ nav {
         left: 0;
         width: 100%;
         z-index: 9999;
+        transition: transform 500ms ease, background-color 500ms ease;
+}
+nav.show {
+        transform: translateY(0%);
 }
 nav.hide {
         transform: translateY(-100%);
@@ -81,13 +85,15 @@ nav.bgColor {
 nav .container {
         max-width: 100%;
 }
-nav .container .ul ul li {
+nav .container .ul ul li a {
         position: relative;
+        color: white;
+        transition-duration: 500ms;
 }
-nav .container .ul ul li::before {
+nav .container .ul ul li a::before {
         content: "";
         position: absolute;
-        bottom: -5px;
+        bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
         width: 0;
@@ -96,19 +102,17 @@ nav .container .ul ul li::before {
         border-bottom: 1.25px solid var(--mainColor);
         transition-duration: 500ms;
 }
-nav .container .ul ul li:hover::before,
-nav .container .ul ul li.active::before {
+nav .container .ul ul li a:hover {
+        color: var(--mainColor);
+}
+nav .container .ul ul li a:hover::before {
         width: 100%;
 }
-nav .container .ul ul li a {
-        color: white;
-        transition-duration: 500ms;
-}
-nav .container .ul ul li:hover a {
+nav .container .ul ul li a.active {
         color: var(--mainColor);
 }
-nav .container .ul ul li.active a {
-        color: var(--mainColor);
+nav .container .ul ul li a.active::before {
+        width: 100%;
 }
 nav .container .canvasBtn {
         padding-block: 6px;
@@ -233,24 +237,27 @@ nav .container .canvasBtn span:nth-child(3) {
 .canvas .canvas-left .container .book-request a:hover::before {
         width: 100%;
 }
-
 .myCarousel .myCarousel-inner {
         position: relative;
         max-width: 100%;
+        background-color: white;
 }
 .myCarousel .myCarousel-inner .myCarousel-item {
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(1.1);
         width: 100%;
-        display: none;
+        display: flex;
+        opacity: 0;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        transition-duration: 500ms;
 }
 .myCarousel .myCarousel-inner .myCarousel-item.active {
-        display: flex;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
 }
 .myCarousel .myCarousel-inner .myCarousel-item:nth-child(1) {
         background-image: url("./../images/slider-1.jpg");
@@ -261,6 +268,24 @@ nav .container .canvasBtn span:nth-child(3) {
 .myCarousel .myCarousel-inner .myCarousel-item:nth-child(3) {
         background-image: url("./../images/slider-3.jpg");
 }
+.myCarousel .myCarousel-inner .myCarousel-item .data {
+        opacity: 0;
+}
+.myCarousel .myCarousel-inner .myCarousel-item.active .data {
+        opacity: 1;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .head {
+        transform: translateY(50px);
+        opacity: 0;
+        transition-duration: 0s;
+        transition-delay: 0s;
+}
+.myCarousel .myCarousel-inner .myCarousel-item.active .data .head {
+        transform: translateY(0px);
+        opacity: 1;
+        transition-duration: 750ms;
+        transition-delay: 500ms;
+}
 .myCarousel .myCarousel-inner .myCarousel-item .data .head h3 {
         letter-spacing: 2px;
 }
@@ -270,12 +295,44 @@ nav .container .canvasBtn span:nth-child(3) {
 .myCarousel .myCarousel-inner .myCarousel-item .data .body h1 {
         font-size: 65px;
         width: 600px;
+        transform: translateY(50px);
+        opacity: 0;
+        transition-duration: 0s;
+        transition-delay: 0s;
+}
+.myCarousel .myCarousel-inner .myCarousel-item.active .data .body h1 {
+        transform: translateY(0px);
+        opacity: 1;
+        transition-duration: 750ms;
+        transition-delay: 750ms;
+}
+.myCarousel .myCarousel-inner .myCarousel-item .data .body p {
+        opacity: 0;
+        transform: translateY(50px);
+        transition-duration: 0s;
+        transition-delay: 0s;
+}
+.myCarousel .myCarousel-inner .myCarousel-item.active .data .body p {
+        opacity: 1;
+        transform: translateY(0px);
+        transition-duration: 750ms;
+        transition-delay: 1s;
 }
 .myCarousel .myCarousel-inner .myCarousel-item .data .body a {
         border: 2px solid var(--mainColor);
         display: inline-block;
         position: relative;
         overflow: hidden;
+        opacity: 0;
+        transform: translateY(50px);
+        transition-duration: 0s;
+        transition-delay: 0s;
+}
+.myCarousel .myCarousel-inner .myCarousel-item.active .data .body a {
+        opacity: 1;
+        transform: translateY(0px);
+        transition-duration: 750ms;
+        transition-delay: 1.25s;
 }
 .myCarousel .myCarousel-inner .myCarousel-item .data .body a::before,
 .myCarousel .myCarousel-inner .myCarousel-item .data .body a::after {
@@ -312,22 +369,20 @@ nav .container .canvasBtn span:nth-child(3) {
 }
 .myCarousel .myCarousel-inner .carouselBtns {
         position: absolute;
-        bottom: 40px;
-        right: 40px;
+        bottom: 20px;
+        right: 20px;
         width: fit-content;
 }
-.myCarousel .myCarousel-inner .carouselBtns span {
-        width: 10px;
-        height: 10px;
+.myCarousel .myCarousel-inner .carouselBtns button {
+        width: 16px;
+        height: 16px;
         background-color: color-mix(in srgb, var(--mainColor) 50%, transparent 50%);
-        border-radius: 50%;
         transition-duration: 500ms;
-        cursor: pointer;
 }
-.myCarousel .myCarousel-inner .carouselBtns span.active {
+.myCarousel .myCarousel-inner .carouselBtns button.active {
         background-color: var(--mainColor);
 }
-.myCarousel .myCarousel-inner .carouselArrows i {
+.myCarousel .myCarousel-inner .carouselArrows button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
@@ -339,24 +394,33 @@ nav .container .canvasBtn span:nth-child(3) {
         justify-content: center;
         align-items: center;
         z-index: 999;
-        transition-duration: 500ms;
+        transition-duration: 250ms;
 }
-.myCarousel .myCarousel-inner .carouselArrows i::before {
-        transform: rotate(-45deg);
-        color: var(--mainColor);
-        transition-duration: 500ms;
-}
-.myCarousel .myCarousel-inner .carouselArrows i.prev {
+.myCarousel .myCarousel-inner .carouselArrows button.prev {
         left: 40px;
 }
-.myCarousel .myCarousel-inner .carouselArrows i.next {
+.myCarousel .myCarousel-inner .carouselArrows button.next {
         right: 40px;
 }
-.myCarousel .myCarousel-inner .carouselArrows i:hover {
+.myCarousel .myCarousel-inner .carouselArrows button:hover {
         background-color: var(--mainColor);
 }
-.myCarousel .myCarousel-inner .carouselArrows i:hover::before {
+.myCarousel .myCarousel-inner .carouselArrows button:active {
+        background-color: color-mix(in srgb, var(--mainColor) 50%, black 50%);
+}
+.myCarousel .myCarousel-inner .carouselArrows button:active {
+        color: var(--mainColor);
+}
+.myCarousel .myCarousel-inner .carouselArrows button i {
+        transform: rotate(-45deg);
+        color: var(--mainColor);
+        transition-duration: 250ms;
+}
+.myCarousel .myCarousel-inner .carouselArrows button:hover i {
         color: black;
+}
+.myCarousel .myCarousel-inner .carouselArrows button:active i {
+        color: var(--mainColor);
 }
 .myCarousel .myCarousel-inner .bookNow {
         position: absolute;
