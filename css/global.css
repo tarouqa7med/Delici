@@ -3,6 +3,13 @@
         --secondaryColor: #171819;
         --mainColor: #E4C590;
 }
+body {
+        background-color: var(--secondaryColor);
+        overflow-x: hidden;
+}
+body.no-scroll {
+        overflow: hidden;
+}
 .cursorPointer:hover {
         cursor: pointer;
 }

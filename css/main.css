@@ -70,7 +70,13 @@ nav {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 999;
+        z-index: 9999;
+}
+nav.hide {
+        transform: translateY(-100%);
+}
+nav.bgColor {
+        background-color: #202020;
 }
 nav .container {
         max-width: 100%;
@@ -137,6 +143,7 @@ nav .container .canvasBtn span:nth-child(3) {
         transition-duration: 500ms;
         opacity: 0;
         display: none;
+        scrollbar-width: none;
 }
 .canvas.active {
         display: block;
@@ -332,16 +339,24 @@ nav .container .canvasBtn span:nth-child(3) {
         justify-content: center;
         align-items: center;
         z-index: 999;
+        transition-duration: 500ms;
 }
 .myCarousel .myCarousel-inner .carouselArrows i::before {
         transform: rotate(-45deg);
         color: var(--mainColor);
+        transition-duration: 500ms;
 }
 .myCarousel .myCarousel-inner .carouselArrows i.prev {
         left: 40px;
 }
 .myCarousel .myCarousel-inner .carouselArrows i.next {
         right: 40px;
+}
+.myCarousel .myCarousel-inner .carouselArrows i:hover {
+        background-color: var(--mainColor);
+}
+.myCarousel .myCarousel-inner .carouselArrows i:hover::before {
+        color: black;
 }
 .myCarousel .myCarousel-inner .bookNow {
         position: absolute;
