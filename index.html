@@ -179,7 +179,7 @@
                                 <button class="cursorPointer prev"><i class="fa-solid fa-chevron-left"></i></button>
                                 <button class="cursorPointer next"><i class="fa-solid fa-chevron-right"></i></button>
                         </div>
-                        <button class="bookNow mainBgColor cursorPointer border-0 d-flex flex-column" onclick="bookTable('#booking-table')">
+                        <button class="bookNow mainBgColor cursorPointer border-0 d-flex flex-column">
                                 <img class="m-auto mb-0" src="./images/book-icon-1.png" alt="">
                                 <span class="w-75 m-auto">BOOK A TABLE</span>
                         </button>
@@ -527,8 +527,8 @@
                                 <div class="form px-5">
                                         <form action="" method="">
                                                 <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
-                                                        <input class=" px-3 py-2 rounded-3" name="name" type="text" placeholder="Name...">
-                                                        <input class=" px-3 py-2 rounded-3" name="email" type="email" placeholder="Email...">
+                                                        <input class="px-3 py-2 rounded-3" name="name" type="text" placeholder="Name...">
+                                                        <input class="px-3 py-2 rounded-3" name="email" type="email" placeholder="Email...">
                                                 </div>
                                                 <textarea class="w-100 mt-2 mb-4 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..."></textarea>
                                                 <button type="submit" class="submitBtn w-100 py-2 rounded-3 mb-5">
@@ -541,9 +541,39 @@
                 <p class="py-5 mb-0 text-center text-light">© 2026 Restaurant. All Rights Reserved | Created by <span style="color: var(--mainColor);">SemiCode</span></p>
         </section>
 
-        <div class="Modal booking-table" id="booking-table">
-                <div class="container">
-                        
+        <div class="Modal booking-table d-flex justify-content-center align-items-center" id="booking-table">
+                <div class="container w-50 p-2 rounded-3">
+                        <div class="w-100 h-100 overflow-y-scroll">
+                                <i class="fa-regular fa-times-circle pe-3 pt-3 cursorPointer close"></i>
+                                <div class="head text-center">
+                                        <h3 class="mainColor fw-light mb-2">RESERVATION</h3>
+                                        <img class="img-fluid mb-3" src="./images/separator.svg" alt="">
+                                        <h1 class="text-light fw-light mb-4">Book A Table</h1>
+                                </div>
+                                <div class="body text-center">
+                                        <p class="mb-1">Restaurant will be open every day <span class="mainColor">from 8:00 AM to 10:00 PM</span>.</p>
+                                        <p class="mb-1">Online reservations are available <span class="mainColor">from 7:00 AM to 9:00 PM</span>.</p>
+                                        <p class="mb-1">All booking payments are secured by credit card. No extra charges apply to online bookings. The booking is non-refundable.</p>
+                                        <p class="my-3">Booking request <a class="mainColor" href="tel:+201021080042">+20-102-108-0042</a> or fill out the order form</p>
+                                </div>
+                                <div class="form px-4 mt-5 mb-3">
+                                        <form action="">
+                                                <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
+                                                        <input class="px-3 py-2 rounded-3" name="name" type="text" placeholder="Reservation Name..." required>
+                                                        <input class="px-3 py-2 rounded-3" name="mobile" type="tel" placeholder="Phone Number..." required>
+                                                </div>
+                                                <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
+                                                        <input class="px-3 py-2 rounded-3" name="seats" type="number" placeholder="Seats..." required>
+                                                        <input class="px-3 py-2 rounded-3" name="email" type="email" placeholder="Email..." required>
+                                                </div>
+                                                <textarea class="w-100 mt-2 mb-4 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..." required></textarea>
+                                                
+                                                <button class="d-block m-auto px-4 py-2 rounded-2">
+                                                        <span>Book A Table</span>
+                                                </button>
+                                        </form>
+                                </div>
+                        </div>
                 </div>
         </div>
 

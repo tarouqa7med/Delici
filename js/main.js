@@ -3,9 +3,9 @@ navbarBgColor();
 navbarHideShow();
 progressBar();
 
-window.addEventListener("DOMContentLoaded", function () {
-        loadingPage();
-});
+// window.addEventListener("DOMContentLoaded", function () {
+//         loadingPage();
+// });
 
 window.addEventListener("scroll", function () {
 
@@ -69,7 +69,7 @@ canvasAnchors.forEach(function (a) {
         })
 })
 
-prevBtn.addEventListener("click", function (event) {
+prevBtn.addEventListener("click", function () {
 
         prevBtn.disabled = true;
         setTimeout( () => prevBtn.disabled = false, 500);
@@ -93,3 +93,4 @@ carouselBtnsArr.forEach(function (btn) {
                 })
         })
 })
+

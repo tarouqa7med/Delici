@@ -1,15 +1,16 @@
 
 
-function loadingPage() {
+// function loadingPage() {
         
-        let loadingPage = document.querySelector(".loadingPage");
-        setTimeout(function () {
-                loadingPage.classList.add("hide");
-        }, 2500);
-        setTimeout(function () {
-                loadingPage.classList.add("d-none");
-        }, 3001);
-}
+//         let loadingPage = document.querySelector(".loadingPage");
+
+//         setTimeout(function () {
+//                 loadingPage.classList.add("hide");
+//         }, 2500);
+//         setTimeout(function () {
+//                 loadingPage.classList.add("d-none");
+//         }, 3001);
+// }
 
 function navbarBgColor() {
         if (window.scrollY > 10) {
