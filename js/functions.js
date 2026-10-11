@@ -153,3 +153,31 @@ function selectedCarouselButton(that) {
         sound.play();
 
 }
+
+function openModal(section_id) {
+
+        let currentSection = document.querySelector(`.Modal#${section_id}`),
+                currentSectionContainer=currentSection.firstElementChild;
+
+        currentSection.classList.add("active");
+
+        setTimeout(function () {
+                currentSection.classList.add("show")
+        }, 1);
+        setTimeout(function () {
+                currentSectionContainer.classList.remove("hide");
+        }, 250)
+}
+
+function closeModal(that) {
+        let activeModal = that.closest(".Modal"),
+                activeModalContainer = activeModal.firstElementChild;
+
+        activeModalContainer.classList.add("hide");
+        setTimeout(() => {
+                activeModal.classList.remove("show");
+        }, 501);
+        setTimeout(function () {
+                activeModal.classList.remove("active");
+        }, 751)
+}
