@@ -15,4 +15,8 @@ let nav = document.querySelector("nav"),
         carouselButtons = document.querySelector(".carouselBtns");
         carouselBtnsArr = document.querySelectorAll(".carouselBtns button"),
         bookNowBtn = document.querySelector(".bookNow"),
+        bookingSection = document.getElementById("booking-table"),
         sound = document.querySelector(".sound");
+
+console.log(bookNowBtn);
+console.log(bookingSection);

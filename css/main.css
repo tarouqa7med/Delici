@@ -158,12 +158,21 @@ nav .container .canvasBtn span:nth-child(3) {
 .canvas .canvas-left {
         position: relative;
         width: 400px !important;
-        background-color: #0e0d0c;
-        background-image: url("./../images/bg.png");
         transition-duration: 500ms;
 }
 .canvas .canvas-left.hide {
         transform: translateX(-100%);
+}
+.canvas .canvas-left::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 100%;
+        background-color: #0e0d0c;
+        background-image: url("./../images/bg.png");
+        z-index: -1;
 }
 .canvas .canvas-left .container .close {
         position: absolute;
@@ -1097,4 +1106,23 @@ nav .container .canvasBtn span:nth-child(3) {
 }
 .ContactUs .container .myCard .form form .submitBtn:hover span {
         color: black;
+}
+
+/* Modal code */
+
+.Modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: color-mix(in srgb, var(--mainColor) 50%, transparent 50%);
+        display: none;
+        opacity: 0;
+}
+.Modal.active {
+        display: flex;
+}
+.Modal.show {
+        opacity: 1;
 }
