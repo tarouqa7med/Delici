@@ -1,7 +1,7 @@
 
 
 // function loadingPage() {
-        
+
 //         let loadingPage = document.querySelector(".loadingPage");
 
 //         setTimeout(function () {
@@ -46,13 +46,18 @@ function progressBar() {
 
 }
 
-function openCanvas() {
-        
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+function editPaddingForWebsite() {
         
         document.body.style.paddingRight = `${scrollbarWidth}px`;
         nav.style.width = `calc(100% - ${scrollbarWidth}px)`;
+
         document.body.classList.add("no-scroll");
+
+}
+
+function openCanvas() {
+        
+        editPaddingForWebsite();
 
         canvas.classList.add("active");
         setTimeout(function () {
@@ -74,7 +79,7 @@ function closeCanvas() {
 
         }, 500);
         setTimeout(function () {
-                canvas.classList.toggle("active");
+                canvas.classList.remove("active");
         }, 1001)
 }
 
@@ -156,6 +161,8 @@ function selectedCarouselButton(that) {
 
 function openModal(section_id) {
 
+        editPaddingForWebsite();
+
         let currentSection = document.querySelector(`.Modal#${section_id}`),
                 currentSectionContainer=currentSection.firstElementChild;
 
@@ -169,8 +176,8 @@ function openModal(section_id) {
         }, 250)
 }
 
-function closeModal(that) {
-        let activeModal = that.closest(".Modal"),
+function closeModal() {
+        let activeModal = document.querySelector(".Modal.active"),
                 activeModalContainer = activeModal.firstElementChild;
 
         activeModalContainer.classList.add("hide");
@@ -178,6 +185,119 @@ function closeModal(that) {
                 activeModal.classList.remove("show");
         }, 501);
         setTimeout(function () {
+                document.body.style.paddingRight = '0px';
+                nav.style.width = "100%";
+                document.body.classList.remove("no-scroll");
                 activeModal.classList.remove("active");
         }, 751)
 }
+
+function openChosenFoodSection(a, anchorHref) {
+
+        let activeAnchor = document.querySelector(".Menu .body li a.active"),
+                foodSection_id = anchorHref.replace("#", ""),
+                activeFoodSection = document.querySelector(".food-menu.active"),
+                chosenFoodSection = document.querySelector(`.food-menu#${foodSection_id}`);
+                
+        activeAnchor.classList.remove("active");
+        activeFoodSection.classList.remove("active");
+        a.classList.add("active");
+        chosenFoodSection.classList.add("active");
+}
+
+function showMenuOfChosenSection(food_id) {
+
+        if (food_id == "BreakFast") {
+                loopOnMenuSection(food_id);
+        } else if (food_id == "Lunch") {
+                loopOnMenuSection(food_id);
+        } else if (food_id == "Dinner") {
+                loopOnMenuSection(food_id);
+        } else if (food_id == "Drinks") {
+                loopOnMenuSection(food_id);
+        }
+
+}
+
+function loopOnMenuSection(food_id) {
+        let activeFoodSection = document.querySelector(`div#${food_id}`),
+                sectionContent = activeFoodSection.firstElementChild;
+        
+        sectionContent.innerHTML = "";
+
+        let arrays = {
+                BreakFast: BreakFast,
+                Lunch: Lunch,
+                Dinner: Dinner,
+                Drinks: Drinks
+        }
+
+        for (let index = 0; index < arrays[food_id].length; index++) {
+                sectionContent.innerHTML += `
+                        <div class="col-lg-6 py-4" data-order-id="${arrays[food_id][index].id}">
+                                <div class="item ps-5 d-flex">
+                                        <div class="part1 mb-0 d-flex justify-content-center align-items-center rounded-4">
+                                                <img class="img-fluid" src="./images/${arrays[food_id][index].images[0]}" alt="">
+                                                <div class="layout d-flex justify-content-center align-items-center">
+                                                        <i class="fa-regular fa-plus-square fs-4 cursorPointer" onclick="openModal('order-item'); loadingOrderData(${arrays[food_id][index].id})"></i>
+                                                </div>
+                                        </div>
+                                        <div class="part2 ms-4 w-100 d-block">
+                                                <div class="name-price w-100 mainColor">
+                                                        <span class="name me-3">${arrays[food_id][index].name}</span>
+                                                        <hr class="d-inline">
+                                                        <span class="price ms-3">$${arrays[food_id][index].price}</span>
+                                                </div>
+                                                <p class="description">
+                                                        ${arrays[food_id][index].description.slice(0, 65)}...
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                `
+
+                sectionContent.querySelectorAll(".col-lg-6").forEach(function (col) {
+                        setTimeout(function () {
+                                col.classList.add("active");
+                        }, 1)
+                })
+        }
+
+}
+
+function loadingOrderData(order_id) {
+        let orderContainer = document.querySelector(".Modal#order-item .container");
+
+        orderContainer.innerHTML = `
+                <div class="w-100 h-100 overflow-y-scroll position-relative" data-order-id="${order_id}">
+                        <i class="fa-regular fa-times-circle cursorPointer close" onclick="closeModal()"></i>
+                        <div class="head text-center mt-3">
+                                <h3 class="mainColor fw-light mb-2">SPECIAL SELECTION</h3>
+                                <img class="img-fluid mb-3" src="./images/separator.svg" alt="">
+                                <h1 class="text-light fw-light mb-4">${allMenu[order_id - 1].name}</h1>
+                        </div>
+                        <div class="body text-center px-4">
+                                <div class="image mb-3">
+                                        <img class="img-fluid rounded-3" src="./images/${allMenu[order_id - 1].images[0]}" alt="" style="aspect-ratio: 16/9">
+                                        <p class="price px-3 py-1">$${allMenu[order_id - 1].price}</p>
+                                        <button class="cursorPointer rounded-2 prev" onclick="prevOrderImage(this, ${order_id})"><i class="fa-solid fa-chevron-left"></i></button>
+                                        <button class="cursorPointer rounded-2 next" onclick="nextOrderImage(this, ${order_id})"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+                                <p class="text-start mb-4">${allMenu[order_id - 1].description}</p>
+                        </div>
+                </div>
+        `
+}
+
+function prevOrderImage(that, order_id) {
+
+        
+
+}
+
+function nextOrderImage(order_id) {
+
+        
+}
+
+loopOnMenuSection('BreakFast');

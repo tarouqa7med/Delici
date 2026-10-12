@@ -55,3 +55,7 @@ div.overflow-y-scroll::-webkit-scrollbar {
         background-color: transparent;
         border-radius: 10px;
 }
+hr.forMenu {
+        width: 5px;
+        background-color: red;
+}

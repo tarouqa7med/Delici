@@ -4,6 +4,9 @@ navbarHideShow();
 progressBar();
 
 // window.addEventListener("DOMContentLoaded", function () {
+
+//         loopOnMenuSection('BreakFast');
+
 //         loadingPage();
 // });
 
@@ -31,13 +34,15 @@ navAnchors.forEach(function (anchor) {
                         sectionTop = currentSection.offsetTop;
                 
                 if (anchor.classList.contains("active")) {
+                        window.scrollTo(0, sectionTop - 0);
                         return;
                 }
                 
                 anchor.classList.add("active")
                 currentNavLink.classList.remove("active");
 
-                window.scrollTo(0, sectionTop - nav.clientHeight);
+                window.scrollTo(0, sectionTop - 0);
+
         })
 })
 
@@ -45,9 +50,7 @@ canvasBtn.addEventListener("click", () => openCanvas())
 
 canvas.addEventListener("click",  () => closeCanvas())
 
-canvasContainer.addEventListener("click", function (event) {
-        event.stopPropagation();
-})
+canvasContainer.addEventListener("click", (event) => event.stopPropagation());
 
 canvasAnchors.forEach(function (a) {
         a.addEventListener("click", function (event) {
@@ -94,3 +97,27 @@ carouselBtnsArr.forEach(function (btn) {
         })
 })
 
+modal.forEach(function (modal) {
+        modal.addEventListener("click", function () {
+                closeModal();
+        })
+})
+
+modalContainer.forEach(function (container) {
+        container.addEventListener("click", (event) => event.stopPropagation());
+})
+
+openFoodSectionAnchors.forEach(function (a) {
+        a.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                let activeFoodSection = document.querySelector(".food-menu.active .row");
+                activeFoodSection.innerHTML = "";
+                
+                let anchorHref = this.getAttribute("href");
+                openChosenFoodSection(a, anchorHref);
+
+                showMenuOfChosenSection(anchorHref.replace("#", ""));
+
+        })
+})
