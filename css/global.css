@@ -3,6 +3,9 @@
         --secondaryColor: #171819;
         --mainColor: #E4C590;
 }
+body {
+        background-color: var(--primaryColor);
+}
 .progressBar {
         position: fixed;
         top: 0;
