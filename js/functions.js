@@ -236,8 +236,8 @@ function loopOnMenuSection(food_id) {
                 sectionContent.innerHTML += `
                         <div class="col-lg-6 py-4" data-order-id="${arrays[food_id][index].id}">
                                 <div class="item ps-5 d-flex">
-                                        <div class="part1 mb-0 d-flex justify-content-center align-items-center rounded-4">
-                                                <img class="img-fluid" src="./images/${arrays[food_id][index].images[0]}" alt="">
+                                        <div class="part1 mb-0 rounded-4">
+                                                <img src="./images/${arrays[food_id][index].images[0]}" alt="">
                                                 <div class="layout d-flex justify-content-center align-items-center">
                                                         <i class="fa-regular fa-plus-square fs-4 cursorPointer" onclick="openModal('order-item'); loadingOrderData(${arrays[food_id][index].id})"></i>
                                                 </div>

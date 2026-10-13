@@ -6,14 +6,37 @@
         .canvas .canvas-left {
                 width: 300px !important;
         }
+        .canvas .canvas-left::before {
+                width: 300px !important;
+        }
         .canvas .canvas-left .container .visitUs .layout {
                 font-size: 12px;
         }
         .canvas .canvas-left .container .book-request a {
-                font-size: 24px;
+                font-size: 20px;
+        }
+        .myCarousel .myCarousel-inner .myCarousel-item .data .body h1 {
+                font-size: 30px;
+                max-width: 250px;
+                margin: auto;
+                margin-bottom: 15px;
+        }
+        .myCarousel .myCarousel-inner .myCarousel-item .data .body p {
+                font-size: 12px !important;
+                margin-bottom: 0;
+        }
+        .myCarousel .myCarousel-inner .myCarousel-item .data .body a {
+                transform: translateY(25px) !important;
+        }
+        .myCarousel .myCarousel-inner .myCarousel-item.active .data .body a {
+                transform: translateY(-25px) !important;
         }
         .myCarousel .myCarousel-inner .carouselArrows {
                 display: none;
+        }
+        .myCarousel .myCarousel-inner .bookNow {
+                width: 65px;
+                height: 65px;
         }
         .aboutUs .container .body .row .content {
                 transform: translateX(0px) translateY(0px) !important;
@@ -24,6 +47,81 @@
         }
         .aboutUs .container .body .row .content .part1 img.offer {
                 max-width: 300px;
+        }
+        .OurStory .container {
+                padding-bottom: -30px !important;
+        }
+        .OurStory .container .row .content:last-child {
+                margin: auto;
+                max-width: 265px;
+        }
+        .OurStory .container .row .content:last-child .item {
+                height: 300px;
+        }
+        .OurStory .container .row .content:last-child div.right-image {
+                transform: scale(0.5);
+                right: -45px !important;
+                top: -30px !important;
+        }
+        .OurStory .container .row .content:last-child div.middle-image {
+                width: 235px !important;
+                transform: translate(-50%, -50%) translateY(65px) !important;
+        }
+        .OurStory .container .row .content:last-child div.left-image {
+                bottom: -50px !important;
+                left: -65px !important;
+                transform: scale(0.7);
+        }
+        .SpecialDish .container .row .part1 {
+                width: 100%;
+                height: 500px;
+        }
+        .SpecialDish .container .row .part2 {
+                margin-block: 0 !important;
+        }
+        .SpecialDish .container .row .part2 .item .layout .body a {
+                margin-bottom: 0 !important;
+        }
+        .SpecialDish .container .row .part2 .item {
+                margin-inline: 30px;
+        }
+        .Menu .container .body .ul ul {
+                padding-bottom: 10px;
+                justify-content: start !important;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                scrollbar-color: transparent transparent;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 {
+                padding-top: 0 !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6:not(:last-child) {
+                margin-bottom: 50px;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item {
+                padding-left: 0 !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part1 img {
+                width: 150px;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price {
+                display: block;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price span.name {
+                width: 100% !important;
+                display: block;
+                margin-right: 0 !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price hr {
+                display: none !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price span.price {
+                width: 100% !important;
+                margin-left: 0 !important;
+                display: block;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 p.description {
+                font-size: 12px;
         }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
@@ -42,19 +140,37 @@
         .canvas .canvas-left {
                 width: 300px !important;
         }
+        .canvas .canvas-left::before {
+                width: 300px !important;
+        }
         .canvas .canvas-left .container .visitUs .layout {
                 font-size: 12px;
         }
         .canvas .canvas-left .container .book-request a {
-                font-size: 24px;
+                font-size: 20px;
         }
         .myCarousel .myCarousel-inner .myCarousel-item .data .body h1 {
                 font-size: 40px;
                 max-width: 350px;
                 margin: auto;
+                margin-bottom: 15px;
+        }
+        .myCarousel .myCarousel-inner .myCarousel-item .data .body p {
+                font-size: 12px !important;
+                margin-bottom: 15px;
+        }
+        .myCarousel .myCarousel-inner .myCarousel-item .data .body a {
+                transform: translateY(25px) !important;
+        }
+        .myCarousel .myCarousel-inner .myCarousel-item.active .data .body a {
+                transform: translateY(-25px) !important;
         }
         .myCarousel .myCarousel-inner .carouselArrows {
                 display: none;
+        }
+        .myCarousel .myCarousel-inner .bookNow {
+                width: 65px;
+                height: 65px;
         }
         .aboutUs .container .body .row .content {
                 transform: translateX(0px) translateY(0px) !important;
@@ -65,6 +181,76 @@
         }
         .aboutUs .container .body .row .content .part1 img.offer {
                 max-width: 300px;
+        }
+        .OurStory .container {
+                padding-bottom: 0 !important;
+        }
+        .OurStory .container .row .content:last-child {
+                margin: auto;
+                max-width: 350px;
+        }
+        .OurStory .container .row .content:last-child .right-image {
+                transform: scale(0.75);
+                right: -25px !important;
+        }
+        .OurStory .container .row .content:last-child .middle-image {
+                width: 300px !important;
+        }
+        .OurStory .container .row .content:last-child .left-image {
+                bottom: 50px !important;
+                left: -45px !important;
+                transform: scale(0.75);
+        }
+        .SpecialDish .container .row .part1 {
+                width: 100%;
+                height: 500px;
+        }
+        .SpecialDish .container .row .part2 {
+                margin-block: 0 !important;
+        }
+        .SpecialDish .container .row .part2 .item {
+                margin-inline: 30px;
+        }
+        .SpecialDish .container .row .part2 .item .layout .body a {
+                margin-bottom: 0 !important;
+        }
+        .Menu .container .body .ul ul {
+                padding-bottom: 10px;
+                justify-content: start !important;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                scrollbar-color: transparent transparent;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 {
+                padding-top: 0 !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6:not(:last-child) {
+                margin-bottom: 25px;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item {
+                padding-left: 0 !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part1 img {
+                width: 150px;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price {
+                display: block;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price span.name {
+                width: 100% !important;
+                display: block;
+                margin-right: 0 !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price hr {
+                display: none !important;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price span.price {
+                width: 100% !important;
+                margin-left: 0 !important;
+                display: block;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 p.description {
+                font-size: 12px;
         }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
@@ -93,6 +279,16 @@
         .aboutUs .container .body .row .content .part1 img.offer {
                 max-width: 300px;
         }
+        .SpecialDish .container .row .part1 {
+                width: 100%;
+                height: 500px;
+        }
+        .SpecialDish .container .row .part2 .item {
+                padding-left: 25px;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item {
+                padding-left: 0 !important;
+        }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
                 flex-direction: column;
@@ -119,6 +315,22 @@
         }
         .aboutUs .container .body .row .content .part1 img.offer {
                 max-width: 300px;
+        }
+        .OurStory .container .row .content:last-child .item div.right-image {
+                right: 125px;
+        }
+        .OurStory .container .row .content:last-child .item div.left-image {
+                left: 125px;
+        }
+        .SpecialDish .container .row .part1 {
+                width: 100%;
+                height: 500px;
+        }
+        .SpecialDish .container .row .part2 .item {
+                padding-left: 100px;
+        }
+        .Menu .container .body .content .food-menu .row .col-lg-6 .item {
+                padding-left: 0 !important;
         }
         .ContactUs .container .myCard .form form .row {
                 display: flex;

@@ -153,6 +153,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         height: 100%;
         background-color: #0e0d0c;
         background-image: url("./../images/bg.png");
+        transition-duration: 500ms;
         z-index: -1;
 }
 .canvas .canvas-left .container .close {
@@ -484,7 +485,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         font-family: "Forum", sans-serif;
 }
 .aboutUs .container .head p {
-        width: 400px;
+        max-width: 400px;
 }
 .aboutUs .container .body .row .content:nth-child(1) { transform: translateY(-75px) translateX(-25px); }
 .aboutUs .container .body .row .content:nth-child(2) { transform: translateY(25px); }
@@ -564,7 +565,8 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .OurStory .container .row .content:first-child .item .body h2 {
         font-family: "Forum", sans-serif;
         font-size: 45px;
-        width: 350px;
+        max-width: 350px;
+        line-height: 45px;
 }
 .OurStory .container .row .content:first-child .item .body p {
         font-size: 15px;
@@ -705,41 +707,46 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .SpecialDish .container .row .part2 .item {
         margin-left: 80px;
 }
-.SpecialDish .container .row .part2 .item .head h3 {
+.SpecialDish .container .row .part2 .item .badge-image {
+        position: relative;
+        height: 500px;
+        width: max-content;
+}
+.SpecialDish .container .row .part2 .item .badge-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: top-bottom 1s linear 0s infinite alternate both;
+}
+.SpecialDish .container .row .part2 .item .layout .head h3 {
         font-family: "Forum", sans-serif;
         font-size: 15px;
         letter-spacing: 2px;
 }
-.SpecialDish .container .row .part2 .item .head img:first-of-type {
+.SpecialDish .container .row .part2 .item .layout .head img:first-of-type {
         width: 100px;
 }
-.SpecialDish .container .row .part2 .item .head img:last-child {
-        position: absolute;
-        top: 0;
-        left: -10%;
-        animation: top-bottom 1s linear 0s infinite alternate both;
-}
-.SpecialDish .container .row .part2 .item .body h1 {
+.SpecialDish .container .row .part2 .item .layout .body h1 {
         font-family: "Forum", sans-serif;
 }
-.SpecialDish .container .row .part2 .item .body p {
-        width: 380px;
+.SpecialDish .container .row .part2 .item .layout .body p {
+        max-width: 380px;
         line-height: 32px;
 }
-.SpecialDish .container .row .part2 .item .body .price {
+.SpecialDish .container .row .part2 .item .layout .body .price {
         font-family: "Forum", sans-serif;
 }
-.SpecialDish .container .row .part2 .item .body .price span:first-child {
+.SpecialDish .container .row .part2 .item .layout .body .price span:first-child {
         color: #C9C9C9;
 }
-.SpecialDish .container .row .part2 .item .body a {
+.SpecialDish .container .row .part2 .item .layout .body a {
         position: relative;
         display: inline-block;
         border: 2px solid var(--mainColor);
         overflow: hidden;
 }
-.SpecialDish .container .row .part2 .item .body a::before,
-.SpecialDish .container .row .part2 .item .body a::after {
+.SpecialDish .container .row .part2 .item .layout .body a::before,
+.SpecialDish .container .row .part2 .item .layout .body a::after {
         content: "";
         position: absolute;
         left: 0;
@@ -748,24 +755,24 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         height: 50%;
         transition-duration: 500ms;
 }
-.SpecialDish .container .row .part2 .item .body a::before {
+.SpecialDish .container .row .part2 .item .layout .body a::before {
         top: -50%;
 }
-.SpecialDish .container .row .part2 .item .body a::after {
+.SpecialDish .container .row .part2 .item .layout .body a::after {
         top: 100%;
 }
-.SpecialDish .container .row .part2 .item .body a:hover::before {
+.SpecialDish .container .row .part2 .item .layout .body a:hover::before {
         top: 0%;
 }
-.SpecialDish .container .row .part2 .item .body a:hover::after {
+.SpecialDish .container .row .part2 .item .layout .body a:hover::after {
         top: 50%;
 }
-.SpecialDish .container .row .part2 .item .body a span {
+.SpecialDish .container .row .part2 .item .layout .body a span {
         transition-duration: 500ms;
         font-size: 15px;
         letter-spacing: 2px;
 }
-.SpecialDish .container .row .part2 .item .body a:hover span {
+.SpecialDish .container .row .part2 .item .layout .body a:hover span {
         color: black;
 }
 .Menu {
@@ -810,10 +817,15 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         border-top: 1px solid white;
         border-bottom: 1px solid white;
 }
-.Menu .container .body .ul li {
+.Menu .container .body .ul ul {
+        margin: auto;
+        width: auto;
+        max-width: 460px;
+}
+.Menu .container .body .ul ul li {
         position: relative;
 }
-.Menu .container .body .ul li:not(:last-of-type)::before {
+.Menu .container .body .ul ul li:not(:last-of-type)::before {
         content: "";
         position: absolute;
         top: 12px;
@@ -823,16 +835,16 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         border: 2px solid var(--mainColor);
         animation: spin 4s linear 0s infinite normal forwards;
 }
-.Menu .container .body .ul li a {
+.Menu .container .body .ul ul li a {
         position: relative;
         color: white;
         font-size: 20px;
         transition-duration: 250ms;
 }
-.Menu .container .body .ul li a.active {
+.Menu .container .body .ul ul li a.active {
         color: var(--mainColor);
 }
-.Menu .container .body .ul li a::before {
+.Menu .container .body .ul ul li a::before {
         content: "";
         position: absolute;
         bottom: -8px;
@@ -845,8 +857,8 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         border-bottom: 1.5px solid var(--mainColor);
         transition-duration: 500ms;
 }
-.Menu .container .body .ul li a:hover::before,
-.Menu .container .body .ul li a.active::before {
+.Menu .container .body .ul ul li a:hover::before,
+.Menu .container .body .ul ul li a.active::before {
         width: 100%;
 }
 .Menu .container .body .content .food-menu .row {
@@ -879,17 +891,15 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         display: flex;
         justify-content: center;
         align-items: center;
-        height: fit-content;
 }
 .Menu .container .body .content .food-menu .row .col-lg-6 .item .part1 {
-        width: 80px;
-        height: 80px;
+        min-width: 85px;
+        min-height: 85px;
         aspect-ratio: 1/1;
         position: relative;
         overflow: hidden;
 }
-.Menu .container .body .content .food-menu .row .col-lg-6 .item .part1::before,
-.Menu .container .body .content .food-menu .row .col-lg-6 .item .part1::after {
+.Menu .container .body .content .food-menu .row .col-lg-6 .item .part1::before {
         content: "";
         position: absolute;
         top: 0;
@@ -897,29 +907,27 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         width: 100%;
         height: 100%;
         transition-duration: 0s;
+        z-index: 1;
 }
 .Menu .container .body .content .food-menu .row .col-lg-6 .item .part1::before {
-        background-position: center;
-        background-size: cover;
-        transition-duration: 500ms;
-}
-.Menu .container .body .content .food-menu .row .col-lg-6 .item .part1:hover::before {
-        transform: scale(1.25);
-}
-.Menu .container .body .content .food-menu .row .col-lg-6 .item .part1::after {
         background-color: color-mix(in srgb, var(--mainColor) 50%, transparent 50%);
         opacity: 0;
 }
-.Menu .container .body .content .food-menu .row .col-lg-6 .item:hover .part1::after {
+.Menu .container .body .content .food-menu .row .col-lg-6 .item:hover .part1::before {
         opacity: 1;
         transition-duration: 500ms;
 }
 .Menu .container .body .content .food-menu .row .col-lg-6 .item .part1 img {
-        transform: scale(1.6);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px !important;
         transition-duration: 500ms;
 }
 .Menu .container .body .content .food-menu .row .col-lg-6 .item:hover .part1 img {
-        transform: scale(2);
+        width: 185px !important;
+        transform: translate(-50%, -50%);
 }
 .Menu .container .body .content .food-menu .row .col-lg-6 .item .part1 .layout {
         position: absolute;
