@@ -3,10 +3,6 @@
         --secondaryColor: #171819;
         --mainColor: #E4C590;
 }
-body {
-        /* background-color: var(--secondaryColor); */
-        overflow-x: hidden !important;
-}
 .progressBar {
         position: fixed;
         top: 0;
@@ -43,8 +39,7 @@ body.no-scroll {
 }
 body::-webkit-scrollbar {
         width: 14px;
-        background-color: transparent;
-        border-radius: 10px;
+        background-color: var(--primaryColor);
 }
 body::-webkit-scrollbar-thumb {
         background-color: var(--mainColor);
