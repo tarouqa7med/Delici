@@ -5,6 +5,7 @@
         left: 0;
         z-index: 9999;
         opacity: 1;
+        font-family: "DM Sans", sans-serif;
 }
 .loadingPage.hide {
         transition-duration: 500ms;
@@ -53,6 +54,7 @@ nav {
         top: 0;
         left: 0;
         width: 100%;
+        font-family: "DM Sans", sans-serif;
         z-index: 9998;
         transition: transform 500ms ease, background-color 500ms ease;
 }
@@ -121,6 +123,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         z-index: 9999;
         width: 100%;
         height: 100%;
+        font-family: "DM Sans", sans-serif;
         background-color: color-mix(in srgb, var(--mainColor) 50%, transparent 50%);
         transition-duration: 500ms;
         opacity: 0;
@@ -194,6 +197,9 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .canvas .canvas-left .container .ul ul li.active a {
         padding-left: 35px;
 }
+.canvas .canvas-left .container .visitUs > h1 {
+        font-family: "Forum", sans-serif !important;
+}
 .canvas .canvas-left .container .visitUs .layout {
         color: #A7A7A7;
         font-size: 14px;
@@ -204,6 +210,10 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         background-color: transparent;
         border: 2px solid var(--mainColor);
         animation: spin 5s linear 0s infinite normal forwards;
+}
+.canvas .canvas-left .container .book-request h5 {
+        font-size: 15px;
+        letter-spacing: 1.5px;
 }
 .canvas .canvas-left .container .book-request a {
         font-size: 30px;
@@ -270,6 +280,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 }
 .myCarousel .myCarousel-inner .myCarousel-item .data .head h3 {
         letter-spacing: 2px;
+        font-family: "Forum", sans-serif;
 }
 .myCarousel .myCarousel-inner .myCarousel-item .data .head img {
         width: 100px;
@@ -277,6 +288,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .myCarousel .myCarousel-inner .myCarousel-item .data .body h1 {
         font-size: 65px;
         width: 600px;
+        font-family: "Forum", sans-serif;
         transform: translateY(50px);
         opacity: 0;
         transition-duration: 0s;
@@ -460,7 +472,8 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         z-index: 1;
 }
 .aboutUs .container .head h3 {
-        font-size: 14px;
+        font-family: "Forum", sans-serif;
+        font-size: 15px;
         letter-spacing: 2px;
 }
 .aboutUs .container .head img {
@@ -468,6 +481,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 }
 .aboutUs .container .head h4 {
         font-size: 45px;
+        font-family: "Forum", sans-serif;
 }
 .aboutUs .container .head p {
         width: 400px;
@@ -515,6 +529,9 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .aboutUs .container .body .row .content .part2 {
         margin-top: 65px;
 }
+.aboutUs .container .body .row .content .part2 h4 {
+        font-family: "Forum", sans-serif;
+}
 .aboutUs .container .body .row .content .part2 a {
         position: relative;
 }
@@ -537,13 +554,15 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         background-color: var(--secondaryColor);
 }
 .OurStory .container .row .content:first-child .item .head h3 {
-        font-size: 14px;
+        font-family: "Forum", sans-serif;
+        font-size: 15px;
         letter-spacing: 2px;
 }
 .OurStory .container .row .content:first-child .item .head img {
         width: 100px;
 }
 .OurStory .container .row .content:first-child .item .body h2 {
+        font-family: "Forum", sans-serif;
         font-size: 45px;
         width: 350px;
 }
@@ -599,6 +618,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         top: 50%;
 }
 .OurStory .container .row .content:first-child .item .body button span {
+        font-family: "DM Sans", sans-serif;
         position: relative;
         z-index: 1;
         color: var(--mainColor);;
@@ -686,7 +706,8 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         margin-left: 80px;
 }
 .SpecialDish .container .row .part2 .item .head h3 {
-        font-size: 14px;
+        font-family: "Forum", sans-serif;
+        font-size: 15px;
         letter-spacing: 2px;
 }
 .SpecialDish .container .row .part2 .item .head img:first-of-type {
@@ -698,9 +719,15 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         left: -10%;
         animation: top-bottom 1s linear 0s infinite alternate both;
 }
+.SpecialDish .container .row .part2 .item .body h1 {
+        font-family: "Forum", sans-serif;
+}
 .SpecialDish .container .row .part2 .item .body p {
         width: 380px;
         line-height: 32px;
+}
+.SpecialDish .container .row .part2 .item .body .price {
+        font-family: "Forum", sans-serif;
 }
 .SpecialDish .container .row .part2 .item .body .price span:first-child {
         color: #C9C9C9;
@@ -735,6 +762,8 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 }
 .SpecialDish .container .row .part2 .item .body a span {
         transition-duration: 500ms;
+        font-size: 15px;
+        letter-spacing: 2px;
 }
 .SpecialDish .container .row .part2 .item .body a:hover span {
         color: black;
@@ -765,6 +794,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         position: relative;
 }
 .Menu .container .head h3 {
+        font-family: "Forum", sans-serif;
         font-size: 15px;
         letter-spacing: 2px;
 }
@@ -772,8 +802,9 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         width: 100px;
 }
 .Menu .container .head h1 {
-        letter-spacing: 1px;
+        font-family: "Forum", sans-serif;
         font-size: 45px;
+        letter-spacing: 1px;
 }
 .Menu .container .body .ul {
         border-top: 1px solid white;
@@ -916,6 +947,8 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         display: grid;
         justify-content: center;
         align-items: center;
+        font-family: "Forum", sans-serif;
+        font-size: 20px;
         grid-template-columns: auto 1fr auto;
 }
 .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 div.name-price hr {
@@ -933,6 +966,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         background-image: url("./../images/bg.png");    
 }
 .OurChefs .container .head h3 {
+        font-family: "Forum", sans-serif;
         font-size: 15px;
         letter-spacing: 2px;
 }
@@ -940,9 +974,11 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         width: 100px;
 }
 .OurChefs .container .head h4 {
+        font-family: "Forum", sans-serif;
         font-size: 45px;
 }
 .OurChefs .container .body .row .col-lg-4 .item {
+        font-family: "Forum", sans-serif;
         width: 80% !important;
         position: relative;
         overflow: hidden;
@@ -1008,10 +1044,13 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         color: black;
 }
 .OurChefs .container .body .row .col-lg-4 .item .chef-bio h4 {
-        letter-spacing: 3px;
+        font-family: "DM Sans", sans-serif;
         font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 3px;
 }
 .OurChefs .container .body .row .col-lg-4 .item .chef-bio p {
+        font-family: "DM Sans", sans-serif;
         color: #A7A7A7;
         font-size: 14px;
 }
@@ -1107,6 +1146,9 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 }
 .ContactUs .container .myCard .form form .submitBtn:hover span {
         color: black;
+}
+.ContactUs > p {
+        font-family: "DM Sans", sans-serif;
 }
 
 /* Modal code */

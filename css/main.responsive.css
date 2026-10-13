@@ -12,6 +12,28 @@
         .canvas .canvas-left .container .book-request a {
                 font-size: 24px;
         }
+        .myCarousel .myCarousel-inner .carouselArrows {
+                display: none;
+        }
+        .aboutUs .container .body .row .content {
+                transform: translateX(0px) translateY(0px) !important;
+        }
+        .aboutUs .container .body .row .content .part1 {
+                margin: auto;
+                max-width: 325px;
+        }
+        .aboutUs .container .body .row .content .part1 img.offer {
+                max-width: 300px;
+        }
+        .ContactUs .container .myCard .form form .row {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 0 !important;
+        }
+        .ContactUs .container .myCard .form form .row input {
+                width: 100%;
+                margin-bottom: 25px;
+        }
 }
 @media screen and (min-width: 371px) and (max-width: 575.98px) {
         nav .container .ul ul {
@@ -26,15 +48,86 @@
         .canvas .canvas-left .container .book-request a {
                 font-size: 24px;
         }
+        .myCarousel .myCarousel-inner .myCarousel-item .data .body h1 {
+                font-size: 40px;
+                max-width: 350px;
+                margin: auto;
+        }
+        .myCarousel .myCarousel-inner .carouselArrows {
+                display: none;
+        }
+        .aboutUs .container .body .row .content {
+                transform: translateX(0px) translateY(0px) !important;
+        }
+        .aboutUs .container .body .row .content .part1 {
+                margin: auto;
+                max-width: 325px;
+        }
+        .aboutUs .container .body .row .content .part1 img.offer {
+                max-width: 300px;
+        }
+        .ContactUs .container .myCard .form form .row {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 0 !important;
+        }
+        .ContactUs .container .myCard .form form .row input {
+                width: 100%;
+                margin-bottom: 25px;
+        }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
         nav .container .ul ul {
                 display: none !important;
         }
+        .myCarousel .myCarousel-inner .carouselArrows {
+                display: none;
+        }
+        .aboutUs .container .body .row .content {
+                transform: translateX(0px) translateY(0px) !important;
+        }
+        .aboutUs .container .body .row .content .part1 {
+                margin: auto;
+                max-width: 325px;
+        }
+        .aboutUs .container .body .row .content .part1 img.offer {
+                max-width: 300px;
+        }
+        .ContactUs .container .myCard .form form .row {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 0 !important;
+        }
+        .ContactUs .container .myCard .form form .row input {
+                width: 100%;
+                margin-bottom: 25px;
+        }
 }
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
         nav .container .ul ul {
                 display: none !important;
+        }
+        .myCarousel .myCarousel-inner .carouselArrows {
+                display: none;
+        }
+        .aboutUs .container .body .row .content {
+                transform: translateX(0px) translateY(0px) !important;
+        }
+        .aboutUs .container .body .row .content .part1 {
+                margin: auto;
+                max-width: 325px;
+        }
+        .aboutUs .container .body .row .content .part1 img.offer {
+                max-width: 300px;
+        }
+        .ContactUs .container .myCard .form form .row {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 0 !important;
+        }
+        .ContactUs .container .myCard .form form .row input {
+                width: 100%;
+                margin-bottom: 25px;
         }
 }
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {
