@@ -1,4 +1,6 @@
 
+const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
 let nav = document.querySelector("nav"),
         navAnchors = nav.querySelectorAll("a"),
         canvasBtn = nav.querySelector(".canvasBtn"),
@@ -18,7 +20,31 @@ let nav = document.querySelector("nav"),
         modal = document.querySelectorAll(".Modal"),
         modalContainer = document.querySelectorAll(".Modal .container"),
         sound = document.querySelector(".sound"),
-        openFoodSectionAnchors = document.querySelectorAll("li .openFoodSection");
-        ;
+        openFoodSectionAnchors = document.querySelectorAll("li .openFoodSection");;
 
-const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+
+function orderVariables() {
+
+        let activeOrder = document.querySelector(".order-data"),
+                activeOrder_type = activeOrder.getAttribute("data-order-type"),
+                activeOrder_id = activeOrder.getAttribute("data-order-id"),
+                activeOrder_name = activeOrder.querySelector("h1"),
+                activeOrder_image = activeOrder.querySelector("img"),
+                activeOrder_imageScr = activeOrder_image.getAttribute("src"),
+                activeOrder_price = activeOrder.querySelector("p.price"),
+                activeOrder_description = activeOrder.querySelector("p.description"),
+                typeArr = window[activeOrder_type];
+
+        return {
+                activeOrder,
+                activeOrder_type,
+                activeOrder_id,
+                activeOrder_name,
+                activeOrder_image,
+                activeOrder_imageScr,
+                activeOrder_price,
+                activeOrder_description,
+                typeArr
+        }
+}

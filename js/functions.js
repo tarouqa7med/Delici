@@ -100,7 +100,7 @@ function updateNavAnchor(section_id) {
         }
 }
 
-function getPrevCarousel() {
+function gnextarousel() {
         
         let activeCarousel = carousels.querySelector(".myCarousel-item.active"),
                 activeCarouselSpan = carouselButtons.querySelector("button.active"),
@@ -239,7 +239,7 @@ function loopOnMenuSection(food_id) {
                                         <div class="part1 mb-0 rounded-4">
                                                 <img src="./images/${arrays[food_id][index].images[0]}" alt="">
                                                 <div class="layout d-flex justify-content-center align-items-center">
-                                                        <i class="fa-regular fa-plus-square fs-4 cursorPointer" onclick="openModal('order-item'); loadingOrderData(${arrays[food_id][index].id})"></i>
+                                                        <i class="fa-regular fa-plus-square fs-4 cursorPointer" onclick="openModal('order-item'); loadingOrderData(${arrays[food_id][index].id}); console.log(this.closest('.col-lg-6'))"></i>
                                                 </div>
                                         </div>
                                         <div class="part2 ms-4 w-100 d-block">
@@ -269,7 +269,7 @@ function loadingOrderData(order_id) {
         let orderContainer = document.querySelector(".Modal#order-item .container");
 
         orderContainer.innerHTML = `
-                <div class="w-100 h-100 overflow-y-scroll position-relative" data-order-type="${allMenu[order_id - 1].type}" data-order-id="${order_id}">
+                <div class="order-data w-100 h-100 overflow-y-scroll position-relative" data-order-type="${allMenu[order_id - 1].type}" data-order-id="${order_id}">
                         <i class="fa-regular fa-times-circle cursorPointer close" onclick="closeModal()"></i>
                         <div class="head text-center mt-3">
                                 <h3 class="mainColor fw-light mb-2">SPECIAL SELECTION</h3>
@@ -280,8 +280,8 @@ function loadingOrderData(order_id) {
                                 <div class="image mb-3">
                                         <img class="img-fluid rounded-3" src="./images/${allMenu[order_id - 1].images[0]}" alt="" style="aspect-ratio: 16/9">
                                         <p class="price px-3 py-1">$${allMenu[order_id - 1].price}</p>
-                                        <button class="cursorPointer rounded-2 prev" onclick="prevOrder('${allMenu[order_id - 1].type}', ${order_id}, this)"><i class="fa-solid fa-chevron-left"></i></button>
-                                        <button class="cursorPointer rounded-2 next" onclick=""><i class="fa-solid fa-chevron-right"></i></button>
+                                        <button class="cursorPointer rounded-2 prev" onclick="prevOrder(this)"><i class="fa-solid fa-chevron-left"></i></button>
+                                        <button class="cursorPointer rounded-2 next" onclick="nextOrder(this)"><i class="fa-solid fa-chevron-right"></i></button>
                                 </div>
                                 <p class="description text-start mb-4">${allMenu[order_id - 1].description}</p>
                         </div>
@@ -290,31 +290,52 @@ function loadingOrderData(order_id) {
 
 }
 
-function prevOrder(type, order_id, that) {
+function prevOrder(that) {
 
-        let myArr = window[type],
-                activeOrder = that.closest(`.Modal#order-item .container div[data-order-id="${order_id}"`),
-                orderName = activeOrder.querySelector(".head h1"),
-                orderImage = activeOrder.querySelector(".body img"),
-                orderImageSrc = orderImage.getAttribute("src"),
-                orderPrice = document.querySelector(".body p.price"),
-                orderDescription = document.querySelector(".body > p.description");
-        
-        orderName.textContent = `${myArr[order_id - 1 - 1].name}`;
-        orderPrice.textContent = `${myArr[order_id - 1 - 1].price}`;
-        orderDescription.textContent = `${myArr[order_id - 1 - 1].description}`;
-        
-        console.log(order_id)
+        let myOrderVariables = orderVariables();
 
-        console.log(activeOrder)
-        console.log(orderName)
-        console.log(orderImageSrc)
-        console.log(orderPrice)
-        console.log(orderDescription)
+        let x = --(myOrderVariables.activeOrder_id) % (myOrderVariables.typeArr).length;
 
-        if (order_id === myArr[0].id) {
-                activeOrder.setAttribute("data-order-id", --myArr[myArr.length].id);
+        if (myOrderVariables.activeOrder_id <= (myOrderVariables.typeArr)[0].id - 1) {
+                myOrderVariables.activeOrder_id = (myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].id;
+                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
+                myOrderVariables.activeOrder_name.textContent = `${(myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].name}`;
+                myOrderVariables.activeOrder_price.textContent = `${(myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].price}`;
+                myOrderVariables.activeOrder_description.textContent = `${(myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].description}`;
+        } else {
+                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
+                myOrderVariables.activeOrder_name.textContent = `${(myOrderVariables.typeArr)[x - 1].name}`;
+                myOrderVariables.activeOrder_price.textContent = `$${(myOrderVariables.typeArr)[x - 1].price}`;
+                myOrderVariables.activeOrder_description.textContent = `${(myOrderVariables.typeArr)[x - 1].description}`;
         }
+
+}
+
+function nextOrder(that) {
+
+        
+        
+        let myOrderVariables = orderVariables();
+
+        ++myOrderVariables.activeOrder_id;
+
+        let x = (myOrderVariables.activeOrder_id - 1) % (myOrderVariables.typeArr).length;
+
+        if (myOrderVariables.activeOrder_id >= myOrderVariables.typeArr[(myOrderVariables.typeArr).length - 1].id + 1) {
+                myOrderVariables.activeOrder_id = myOrderVariables.typeArr[0].id;
+                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
+                myOrderVariables.activeOrder_name.textContent = `${myOrderVariables.typeArr[0].name}`;
+                myOrderVariables.activeOrder_price.textContent = `$${myOrderVariables.typeArr[0].price}`;
+                myOrderVariables.activeOrder_description.textContent = `${myOrderVariables.typeArr[0].description}`;
+        } else {
+                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
+                myOrderVariables.activeOrder_name.textContent = `${myOrderVariables.typeArr[x].name}`;
+                myOrderVariables.activeOrder_price.textContent = `$${myOrderVariables.typeArr[x].price}`;
+                myOrderVariables.activeOrder_description.textContent = `${myOrderVariables.typeArr[x].description}`;
+        }
+
+
+
 }
 
 loopOnMenuSection('BreakFast');
