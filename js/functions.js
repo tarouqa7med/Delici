@@ -294,20 +294,26 @@ function prevOrder(that) {
 
         let myOrderVariables = orderVariables();
 
-        let x = --(myOrderVariables.activeOrder_id) % (myOrderVariables.typeArr).length;
+        --(myOrderVariables.activeOrder_id);
+
+        let x = (myOrderVariables.activeOrder_id - 1) % (myOrderVariables.typeArr).length;
 
         if (myOrderVariables.activeOrder_id <= (myOrderVariables.typeArr)[0].id - 1) {
+
                 myOrderVariables.activeOrder_id = (myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].id;
-                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
-                myOrderVariables.activeOrder_name.textContent = `${(myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].name}`;
-                myOrderVariables.activeOrder_price.textContent = `${(myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].price}`;
-                myOrderVariables.activeOrder_description.textContent = `${(myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].description}`;
-        } else {
-                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
-                myOrderVariables.activeOrder_name.textContent = `${(myOrderVariables.typeArr)[x - 1].name}`;
-                myOrderVariables.activeOrder_price.textContent = `$${(myOrderVariables.typeArr)[x - 1].price}`;
-                myOrderVariables.activeOrder_description.textContent = `${(myOrderVariables.typeArr)[x - 1].description}`;
+                x = (myOrderVariables.typeArr).length - 1;
         }
+
+        myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
+
+        let imageSrcArr = myOrderVariables.activeOrder_imageScr.split("/");
+        imageSrcArr[imageSrcArr.length - 1] = (myOrderVariables.typeArr)[x].images[0];
+        let newImageSrc = imageSrcArr.join("/");
+        myOrderVariables.activeOrder_image.setAttribute("src", newImageSrc);
+
+        myOrderVariables.activeOrder_name.textContent = `${(myOrderVariables.typeArr)[x].name}`;
+        myOrderVariables.activeOrder_price.textContent = `$${(myOrderVariables.typeArr)[x].price}`;
+        myOrderVariables.activeOrder_description.textContent = `${(myOrderVariables.typeArr)[x].description}`;
 
 }
 
@@ -315,22 +321,26 @@ function nextOrder(that) {
 
         let myOrderVariables = orderVariables();
 
-        ++myOrderVariables.activeOrder_id;
+        ++(myOrderVariables.activeOrder_id);
 
         let x = (myOrderVariables.activeOrder_id - 1) % (myOrderVariables.typeArr).length;
 
-        if (myOrderVariables.activeOrder_id >= myOrderVariables.typeArr[(myOrderVariables.typeArr).length - 1].id + 1) {
-                myOrderVariables.activeOrder_id = myOrderVariables.typeArr[0].id;
-                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
-                myOrderVariables.activeOrder_name.textContent = `${myOrderVariables.typeArr[0].name}`;
-                myOrderVariables.activeOrder_price.textContent = `$${myOrderVariables.typeArr[0].price}`;
-                myOrderVariables.activeOrder_description.textContent = `${myOrderVariables.typeArr[0].description}`;
-        } else {
-                myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
-                myOrderVariables.activeOrder_name.textContent = `${myOrderVariables.typeArr[x].name}`;
-                myOrderVariables.activeOrder_price.textContent = `$${myOrderVariables.typeArr[x].price}`;
-                myOrderVariables.activeOrder_description.textContent = `${myOrderVariables.typeArr[x].description}`;
+        if (myOrderVariables.activeOrder_id >= (myOrderVariables.typeArr)[(myOrderVariables.typeArr).length - 1].id + 1) {
+
+                myOrderVariables.activeOrder_id = (myOrderVariables.typeArr)[0].id;
+                x = 0;
         }
+
+        myOrderVariables.activeOrder.setAttribute("data-order-id", myOrderVariables.activeOrder_id);
+
+        let imageSrcArr = myOrderVariables.activeOrder_imageScr.split("/");
+        imageSrcArr[imageSrcArr.length - 1] = (myOrderVariables.typeArr)[x].images[0];
+        let newImageSrc = imageSrcArr.join("/");
+        myOrderVariables.activeOrder_image.setAttribute("src", newImageSrc);
+
+        myOrderVariables.activeOrder_name.textContent = `${(myOrderVariables.typeArr)[x].name}`;
+        myOrderVariables.activeOrder_price.textContent = `$${(myOrderVariables.typeArr)[x].price}`;
+        myOrderVariables.activeOrder_description.textContent = `${(myOrderVariables.typeArr)[x].description}`;
 
 }
 
