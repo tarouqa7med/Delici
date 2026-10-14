@@ -8,6 +8,7 @@ let nav = document.querySelector("nav"),
         canvasContainer = canvas.querySelector(".canvas-left"),
         canvasAnchors = canvas.querySelectorAll(".canvas-left a"),
         progressBarSpan = document.querySelector(".progressBar"),
+        returnToTopButton = document.querySelector(".returnToTopBtn"),
         sections = document.querySelectorAll("section"),
         oldScroll = window.scrollY,
         carousels = document.querySelector(".carousels"),
@@ -20,7 +21,7 @@ let nav = document.querySelector("nav"),
         modal = document.querySelectorAll(".Modal"),
         modalContainer = document.querySelectorAll(".Modal .container"),
         sound = document.querySelector(".sound"),
-        openFoodSectionAnchors = document.querySelectorAll("li .openFoodSection");;
+        openFoodSectionAnchors = document.querySelectorAll("li .openFoodSection");
 
 
 

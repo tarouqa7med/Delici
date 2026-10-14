@@ -40,7 +40,7 @@ function progressBar() {
         x = currentScroll,
         y = totalHTMLWidth,
         z = (x / y) * 100,
-        progressBarWidth = z * 1.15;
+        progressBarWidth = z * 1.12;
         
         progressBarSpan.style.width = `${progressBarWidth}%`;
 

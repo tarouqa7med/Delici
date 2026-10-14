@@ -132,6 +132,12 @@
                 width: 100%;
                 margin-bottom: 25px;
         }
+        .ContactUs .container .myCard .form form .row .input-div {
+                width: 100% !important;
+        }
+        .Modal.booking-table .container .form form .row .input-div {
+                width: 100% !important;
+        }
 }
 @media screen and (min-width: 371px) and (max-width: 575.98px) {
         nav .container .ul ul {
@@ -261,6 +267,12 @@
                 width: 100%;
                 margin-bottom: 25px;
         }
+        .ContactUs .container .myCard .form form .row .input-div {
+                width: 100% !important;
+        }
+        .Modal.booking-table .container .form form .row .input-div {
+                width: 100% !important;
+        }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
         nav .container .ul ul {
@@ -297,6 +309,12 @@
         .ContactUs .container .myCard .form form .row input {
                 width: 100%;
                 margin-bottom: 25px;
+        }
+        .ContactUs .container .myCard .form form .row .input-div {
+                width: 100% !important;
+        }
+        .Modal.booking-table .container .form form .row .input-div {
+                width: 100% !important;
         }
 }
 @media screen and (min-width: 768px) and (max-width: 991.98px) {

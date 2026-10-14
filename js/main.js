@@ -22,6 +22,12 @@ window.addEventListener("scroll", function () {
                 updateNavAnchor(section.id);
         })
 
+        if (window.scrollY >= 100) {
+                returnToTopButton.classList.add("active");
+        } else {
+                returnToTopButton.classList.remove("active");
+        }
+
 })
 
 navAnchors.forEach(function (anchor) {

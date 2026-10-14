@@ -48,7 +48,35 @@
 .loadingPage .delici-word span:nth-child(4)::before { content: "I"; animation-delay: 1100ms; }
 .loadingPage .delici-word span:nth-child(5)::before { content: "C"; animation-delay: 1300ms; }
 .loadingPage .delici-word span:nth-child(6)::before { content: "I"; animation-delay: 1500ms; }
-
+.progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 7px !important;
+        background-color: var(--mainColor);
+        border-radius: 0 15px 15px 0;
+        z-index: 9999;
+}
+.returnToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--mainColor);
+        color: black;
+        border: 2px solid color-mix(in srgb, var(--mainColor) 75%, black 25%);
+        transition-duration: 500ms;
+        z-index: 9999;
+        display: none;
+}
+.returnToTopBtn.active {
+        display: block;
+}
+.returnToTopBtn:hover {
+        background-color: color-mix(in srgb, var(--mainColor) 25%, black 75%);
+        color: var(--mainColor);
+}
 nav {
         position: fixed;
         top: 0;
@@ -115,7 +143,6 @@ nav .container .canvasBtn span {
 nav .container .canvasBtn span:nth-child(1) { animation: canvasBtn-span 350ms linear 0s infinite alternate both; }
 nav .container .canvasBtn span:nth-child(2) { animation: canvasBtn-span 350ms linear 150ms infinite alternate both; }
 nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms linear 300ms infinite alternate both; }
-
 .canvas {
         position: fixed;
         top: 0;
@@ -260,7 +287,6 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .myCarousel .myCarousel-inner .myCarousel-item:nth-child(1) { background-image: url("./../images/slider-1.jpg"); }
 .myCarousel .myCarousel-inner .myCarousel-item:nth-child(2) { background-image: url("./../images/slider-2.jpg"); }
 .myCarousel .myCarousel-inner .myCarousel-item:nth-child(3) { background-image: url("./../images/slider-3.jpg"); }
-
 .myCarousel .myCarousel-inner .myCarousel-item .data {
         opacity: 0;
 }
@@ -490,7 +516,6 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .aboutUs .container .body .row .content:nth-child(1) { transform: translateY(-75px) translateX(-25px); }
 .aboutUs .container .body .row .content:nth-child(2) { transform: translateY(25px); }
 .aboutUs .container .body .row .content:nth-child(3) { transform: translateY(-75px) translateX(25px); }
-
 .aboutUs .container .body .row .content .part1 {
         transform: translateY(35px);
         position: relative;
@@ -1036,7 +1061,6 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(2):hover { background-color: white; }
 .OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(3):hover { background-color: #DD3E5C; }
 .OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(4):hover { background-color: #1877F2; }
-
 .OurChefs .container .body .row .col-lg-4 .item:hover .frame ul li a i {
         transition-duration: 500ms;
 }
@@ -1044,7 +1068,6 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(2) a i { color: white; }
 .OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(3) a i { color: #DD3E5C; }
 .OurChefs .container .body .row .col-lg-4 .item .frame ul li:nth-child(4) a i { color: #1877F2; }
-
 .OurChefs .container .body .row .col-lg-4 .item .frame ul li:hover a i {
         color: white;
 }

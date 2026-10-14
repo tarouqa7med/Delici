@@ -34,6 +34,10 @@
         <div class="progressBar">
         </div>
 
+        <button class="returnToTopBtn rounded-3" onclick="window.scrollTo(0, 0)">
+                <i class="fa-solid fa-chevron-up"></i>
+        </button>
+
         <nav class="show">
                 <div class="container px-4 py-3 d-flex justify-content-between align-items-center">
                         <div class="image">
@@ -444,10 +448,10 @@
                                         <form action="" method="">
                                                 <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
                                                         <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="name" type="text" placeholder="Name...">
+                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="name" type="text" placeholder="Name..." onblur="checkInput(this)" required>
                                                         </div>
                                                         <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="email" type="email" placeholder="Email...">
+                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="email" type="email" placeholder="Email..." onblur="checkInput(this)" required>
                                                         </div>
                                                 </div>
                                                 <textarea class="w-100 mt-2 mb-4 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..."></textarea>
@@ -480,18 +484,18 @@
                                         <form action="">
                                                 <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
                                                         <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="name" type="text" placeholder="Reservation Name..." required>
+                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="name" type="text" placeholder="Reservation Name..." onblur="checkInput(this)" required>
                                                         </div>
                                                         <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="mobile" type="tel" placeholder="Phone Number..." required>
+                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="mobile" type="tel" placeholder="Phone Number..." onblur="checkInput(this)" required>
                                                         </div>
                                                 </div>
                                                 <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
                                                         <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="seats" type="number" placeholder="Seats..." required>
+                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="seats" type="number" placeholder="Seats..." onblur="checkInput(this)" required>
                                                         </div>
                                                         <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="email" type="email" placeholder="Email..." required>
+                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="email" type="email" placeholder="Email..." onblur="checkInput(this)" required>
                                                         </div>
                                                 </div>
                                                 <textarea class="w-100 mt-2 mb-4 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..." required></textarea>
