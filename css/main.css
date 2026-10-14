@@ -1124,6 +1124,15 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         border: 2.5px solid var(--mainColor);
         animation: spin 5s linear 0s infinite normal forwards;
 }
+.ContactUs .container .myCard .form {
+        position: relative;
+}
+.ContactUs .container .myCard .form .clear {
+        color: var(--mainColor);
+        position: absolute;
+        top: -30px;
+        right: 0;
+}
 .ContactUs .container .myCard .form form .row .input-div {
         width: 47.5%;
 }
@@ -1134,6 +1143,11 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         border: 1px solid #A7A7A7;
         transition-duration: 200ms;
 }
+.ContactUs .container .myCard .form form .input-div p {
+        position: absolute;
+        color: red;
+        font-size: 15px;
+}
 .ContactUs .container .myCard .form form textarea {
         height: 150px;
         background-color: transparent;
@@ -1141,6 +1155,12 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         border: 1px solid #A7A7A7;
         resize: none;
         transition-duration: 200ms;
+}
+.ContactUs .container .myCard .form form .row .input-div input.invalid,
+.ContactUs .container .myCard .form form .row .input-div input.invalid:focus,
+.ContactUs .container .myCard .form form .input-div textarea.invalid,
+.ContactUs .container .myCard .form form .input-div textarea.invalid:focus {
+        border: 1px solid red;
 }
 .ContactUs .container .myCard .form form .row .input-div input:focus,
 .ContactUs .container .myCard .form form textarea:focus {
@@ -1214,6 +1234,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         opacity: 1;
 }
 .Modal .container {
+        max-width: 650px;
         height: 90%;
         position: relative;
         overflow: hidden;
@@ -1255,6 +1276,15 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 
 /* Booking Modal Code */
 
+.Modal.booking-table .container .form {
+        position: relative;
+}
+.Modal.booking-table .container .form .clear {
+        color: var(--mainColor);
+        position: absolute;
+        top: -30px;
+        right: 0;
+}
 .Modal.booking-table .container .form form .row .input-div {
         width: 47.5%;
 }
@@ -1263,6 +1293,15 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         color: #A7A7A7;
         border: 1px solid #A7A7A7;
         transition-duration: 200ms;
+}
+.Modal.booking-table .container .form form .row .input-div input.invalid,
+.Modal.booking-table .container .form form .row .input-div input.invalid:focus {
+        border: 1px solid red;
+}
+.Modal.booking-table .container .form form .row .input-div p {
+        position: absolute;
+        color: red;
+        font-size: 15px;
 }
 .Modal.booking-table .container .form form textarea {
         height: 150px;

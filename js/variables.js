@@ -21,7 +21,8 @@ let nav = document.querySelector("nav"),
         modal = document.querySelectorAll(".Modal"),
         modalContainer = document.querySelectorAll(".Modal .container"),
         sound = document.querySelector(".sound"),
-        openFoodSectionAnchors = document.querySelectorAll("li .openFoodSection");
+        openFoodSectionAnchors = document.querySelectorAll("li .openFoodSection"),
+        clearBtns = document.querySelectorAll("i.fa-rotate-left.clear");
 
 
 

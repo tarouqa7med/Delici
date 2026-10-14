@@ -134,9 +134,17 @@
         }
         .ContactUs .container .myCard .form form .row .input-div {
                 width: 100% !important;
+                margin-bottom: 20px;
+        }
+        .Modal.booking-table .container .form form .row {
+                margin-bottom: 0 !important;
         }
         .Modal.booking-table .container .form form .row .input-div {
                 width: 100% !important;
+                margin-bottom: 20px;
+        }
+        .Modal .container {
+                width: 90% !important;
         }
 }
 @media screen and (min-width: 371px) and (max-width: 575.98px) {
@@ -269,9 +277,17 @@
         }
         .ContactUs .container .myCard .form form .row .input-div {
                 width: 100% !important;
+                margin-bottom: 20px;
+        }
+        .Modal.booking-table .container .form form .row {
+                margin-bottom: 0 !important;
         }
         .Modal.booking-table .container .form form .row .input-div {
                 width: 100% !important;
+                margin-bottom: 20px;
+        }
+        .Modal .container {
+                width: 90% !important;
         }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
@@ -312,9 +328,17 @@
         }
         .ContactUs .container .myCard .form form .row .input-div {
                 width: 100% !important;
+                margin-bottom: 20px;
+        }
+        .Modal.booking-table .container .form form .row {
+                margin-bottom: 0 !important;
         }
         .Modal.booking-table .container .form form .row .input-div {
                 width: 100% !important;
+                margin-bottom: 20px;
+        }
+        .Modal .container {
+                width: 90% !important;
         }
 }
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -352,12 +376,14 @@
         }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
-                flex-direction: column;
                 margin-bottom: 0 !important;
         }
         .ContactUs .container .myCard .form form .row input {
                 width: 100%;
                 margin-bottom: 25px;
+        }
+        .Modal .container {
+                width: 80% !important;
         }
 }
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {

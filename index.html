@@ -445,17 +445,26 @@
                                         </div>
                                 </div>
                                 <div class="form px-5">
+                                        <i class="fa-solid me-5 fa-rotate-left d-none cursorPointer clear"></i>
                                         <form action="" method="">
-                                                <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
-                                                        <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="name" type="text" placeholder="Name..." onblur="checkInput(this)" required>
+                                                <div class="row w-100 m-0 d-flex justify-content-between">
+                                                        <div class="input-div p-0 pb-3 mb-3">
+                                                                <input class="form-control px-3 py-2 mb-0 rounded-3 w-100" name="name" type="text" placeholder="Name..." onblur="checkInput(this)" required>
+                                                                <p class="field-required mb-0 d-none">This field is required.</p>
+                                                                <p class="letters-only d-none">Enter letters only.</p>
                                                         </div>
-                                                        <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="email" type="email" placeholder="Email..." onblur="checkInput(this)" required>
+                                                        <div class="input-div p-0 pb-3 mb-3">
+                                                                <input class="form-control px-3 py-2 mb-0 rounded-3 w-100" name="email" type="email" placeholder="Email..." onblur="checkInput(this)" required>
+                                                                <p class="field-required mb-0 d-none">This field is required.</p>
+                                                                <p class="valid-email mb-0 d-none">Invalid email address.</p>
                                                         </div>
                                                 </div>
-                                                <textarea class="w-100 mt-2 mb-4 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..."></textarea>
-                                                <button type="submit" class="submitBtn w-100 py-2 rounded-3 mb-5">
+                                                <div class="input-div p-0 pb-3 mb-3">
+                                                        <textarea class="w-100 mt-2 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..." onblur="checkInput(this)"></textarea>
+                                                        <p class="field-required mb-0 d-none">This field is required.</p>
+                                                        <p class="valid-message mb-0 d-none">Message: 10-300 characters.</p>
+                                                </div>
+                                                <button type="submit" class="submitBtn w-100 py-2 rounded-3 mt-2 mb-5">
                                                         <span>Send Message</span>
                                                 </button>
                                         </form>
@@ -466,36 +475,45 @@
         </section>
 
         <div class="Modal booking-table justify-content-center align-items-center" id="booking-table">
-                <div class="container hide w-50 p-2 rounded-3">
+                <div class="container hide w-75 p-2 rounded-3">
                         <div class="w-100 h-100 overflow-y-scroll position-relative">
-                                <i class="fa-regular fa-times-circle cursorPointer close" onclick="closeModal()"></i>
+                                <i class="fa-regular fa-times-circle cursorPointer close" onclick="closeModal();"></i>
                                 <div class="head text-center">
                                         <h3 class="mainColor fw-light mb-2">RESERVATION</h3>
                                         <img class="img-fluid mb-3" src="./images/separator.svg" alt="">
                                         <h1 class="text-light fw-light mb-4">Book A Table</h1>
                                 </div>
-                                <div class="body text-center">
+                                <div class="body text-center px-4">
                                         <p class="mb-1">Restaurant will be open every day <span class="mainColor">from 8:00 AM to 10:00 PM</span>.</p>
                                         <p class="mb-1">Online reservations are available <span class="mainColor">from 7:00 AM to 9:00 PM</span>.</p>
                                         <p class="mb-1">All booking payments are secured by credit card. No extra charges apply to online bookings. The booking is non-refundable.</p>
                                         <p class="my-3">Booking request <a class="mainColor" href="tel:+201021080042">+20-102-108-0042</a> or fill out the order form</p>
                                 </div>
                                 <div class="form px-4 mt-5 mb-3">
+                                        <i class="fa-solid fa-rotate-left me-4 d-none cursorPointer clear"></i>
                                         <form action="">
                                                 <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
                                                         <div class="input-div p-0 pb-3">
                                                                 <input class="form-control px-3 py-2 rounded-3 w-100" name="name" type="text" placeholder="Reservation Name..." onblur="checkInput(this)" required>
+                                                                <p class="field-required mb-0 d-none">This field is required.</p>
+                                                                <p class="letters-only d-none">Enter letters only.</p>
                                                         </div>
                                                         <div class="input-div p-0 pb-3">
                                                                 <input class="form-control px-3 py-2 rounded-3 w-100" name="mobile" type="tel" placeholder="Phone Number..." onblur="checkInput(this)" required>
+                                                                <p class="field-required mb-0 d-none">This field is required.</p>
+                                                                <p class="eg-number d-none">Enter a valid Egyptian phone number.</p>
                                                         </div>
                                                 </div>
                                                 <div class="row w-100 m-0 mb-4 d-flex justify-content-between">
                                                         <div class="input-div p-0 pb-3">
                                                                 <input class="form-control px-3 py-2 rounded-3 w-100" name="seats" type="number" placeholder="Seats..." onblur="checkInput(this)" required>
+                                                                <p class="field-required mb-0 d-none">This field is required.</p>
+                                                                <p class="oneToFifteen d-none">Available seats from 1 to 15.</p>
                                                         </div>
                                                         <div class="input-div p-0 pb-3">
-                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="email" type="email" placeholder="Email..." onblur="checkInput(this)" required>
+                                                                <input class="form-control px-3 py-2 rounded-3 w-100" name="date" type="datetime-local" min="07:00" max="21:00" onblur="checkInput(this)" required>
+                                                                <p class="field-required mb-0 d-none">This field is required.</p>
+                                                                <p class="wrong-time mb-0 d-none">Please select a time between 7 AM and 9 PM.</p>
                                                         </div>
                                                 </div>
                                                 <textarea class="w-100 mt-2 mb-4 px-3 py-2 rounded-3" name="message" id="" placeholder="Message..." required></textarea>
@@ -510,7 +528,7 @@
         </div>
 
         <div class="Modal order-item justify-content-center align-items-center" id="order-item">
-                <div class="container hide w-50 p-2 rounded-3">
+                <div class="container hide w-75 p-2 rounded-3">
                         
                 </div>
         </div>
