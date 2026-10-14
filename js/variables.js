@@ -30,7 +30,7 @@ function orderVariables() {
                 activeOrder_type = activeOrder.getAttribute("data-order-type"),
                 activeOrder_id = activeOrder.getAttribute("data-order-id"),
                 activeOrder_name = activeOrder.querySelector("h1"),
-                activeOrder_image = activeOrder.querySelector("img"),
+                activeOrder_image = activeOrder.querySelector("img.order-image"),
                 activeOrder_imageScr = activeOrder_image.getAttribute("src"),
                 activeOrder_price = activeOrder.querySelector("p.price"),
                 activeOrder_description = activeOrder.querySelector("p.description"),

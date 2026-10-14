@@ -278,7 +278,7 @@ function loadingOrderData(order_id) {
                         </div>
                         <div class="body text-center px-4">
                                 <div class="image mb-3">
-                                        <img class="img-fluid rounded-3" src="./images/${allMenu[order_id - 1].images[0]}" alt="" style="aspect-ratio: 16/9">
+                                        <img class="img-fluid order-image rounded-3" src="./images/${allMenu[order_id - 1].images[0]}" alt="" style="aspect-ratio: 16/9">
                                         <p class="price px-3 py-1">$${allMenu[order_id - 1].price}</p>
                                         <button class="cursorPointer rounded-2 prev" onclick="prevOrder(this)"><i class="fa-solid fa-chevron-left"></i></button>
                                         <button class="cursorPointer rounded-2 next" onclick="nextOrder(this)"><i class="fa-solid fa-chevron-right"></i></button>
