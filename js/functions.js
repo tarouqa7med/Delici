@@ -313,8 +313,6 @@ function prevOrder(that) {
 
 function nextOrder(that) {
 
-        
-        
         let myOrderVariables = orderVariables();
 
         ++myOrderVariables.activeOrder_id;
@@ -333,8 +331,6 @@ function nextOrder(that) {
                 myOrderVariables.activeOrder_price.textContent = `$${myOrderVariables.typeArr[x].price}`;
                 myOrderVariables.activeOrder_description.textContent = `${myOrderVariables.typeArr[x].description}`;
         }
-
-
 
 }
 
