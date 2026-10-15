@@ -269,7 +269,7 @@ function loadingOrderData(order_id) {
         let orderContainer = document.querySelector(".Modal#order-item .container");
 
         orderContainer.innerHTML = `
-                <div class="order-data w-100 h-100 overflow-y-scroll position-relative" data-order-type="${allMenu[order_id - 1].type}" data-order-id="${order_id}">
+                <div class="order-data layout w-100 h-100 overflow-y-scroll position-relative" data-order-type="${allMenu[order_id - 1].type}" data-order-id="${order_id}">
                         <i class="fa-regular fa-times-circle cursorPointer close" onclick="closeModal()"></i>
                         <div class="head text-center mt-3">
                                 <h3 class="mainColor fw-light mb-2">SPECIAL SELECTION</h3>
