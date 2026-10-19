@@ -100,7 +100,7 @@ function updateNavAnchor(section_id) {
         }
 }
 
-function gnextarousel() {
+function getPrevCarousel() {
         
         let activeCarousel = carousels.querySelector(".myCarousel-item.active"),
                 activeCarouselSpan = carouselButtons.querySelector("button.active"),
