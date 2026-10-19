@@ -9,6 +9,7 @@ function loadingPage() {
         }, 2500);
         setTimeout(function () {
                 loadingPage.classList.add("d-none");
+                document.body.classList.remove("no-scroll");
         }, 3001);
 }
 
