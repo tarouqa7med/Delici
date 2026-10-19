@@ -3,12 +3,12 @@ navbarBgColor();
 navbarHideShow();
 progressBar();
 
-// window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", function () {
 
-//         loopOnMenuSection('BreakFast');
+        loopOnMenuSection('BreakFast');
 
-//         loadingPage();
-// });
+        loadingPage();
+});
 
 window.addEventListener("scroll", function () {
 
