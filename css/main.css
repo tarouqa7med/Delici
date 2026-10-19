@@ -393,6 +393,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
         bottom: 20px;
         right: 20px;
         width: fit-content;
+        z-index: 10;
 }
 .myCarousel .myCarousel-inner .carouselBtns button {
         width: 16px;

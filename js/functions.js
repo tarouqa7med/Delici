@@ -113,7 +113,9 @@ function getPrevCarousel() {
         }
 
         activeCarousel.classList.remove("active");
-        prevCarousel.classList.add("active")
+        activeCarousel.classList.remove("z-1");
+        prevCarousel.classList.add("active");
+        prevCarousel.classList.add("z-1");
         activeCarouselSpan.classList.remove("active");
         prevCarouselSpan.classList.add("active");
         sound.play();
@@ -133,7 +135,9 @@ function getNextCarousel() {
         }
 
         activeCarousel.classList.remove("active");
+        activeCarousel.classList.remove("z-1");
         nextCarousel.classList.add("active");
+        nextCarousel.classList.add("z-1");
         activeCarouselSpan.classList.remove("active");
         nextCarouselSpan.classList.add("active");
         sound.play();
@@ -153,7 +157,9 @@ function selectedCarouselButton(that) {
                 btn.classList.remove("active");
         })
         selectedCarouselItem.classList.add("active");
+        selectedCarouselItem.classList.add("z-1");
         activeCarouselItem.classList.remove("active");
+        activeCarouselItem.classList.remove("z-1");
         that.classList.add("active");
         sound.play();
 
