@@ -270,8 +270,8 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 .myCarousel .myCarousel-inner .myCarousel-item {
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%) scale(1.1);
+        left: 0;
+        transform: scale(1.1);
         width: 100%;
         display: flex;
         opacity: 0;
@@ -282,7 +282,7 @@ nav .container .canvasBtn span:nth-child(3) { animation: canvasBtn-span 350ms li
 }
 .myCarousel .myCarousel-inner .myCarousel-item.active {
         opacity: 1;
-        transform: translateX(-50%) scale(1);
+        transform: scale(1);
 }
 .myCarousel .myCarousel-inner .myCarousel-item:nth-child(1) { background-image: url("./../images/slider-1.jpg"); }
 .myCarousel .myCarousel-inner .myCarousel-item:nth-child(2) { background-image: url("./../images/slider-2.jpg"); }
