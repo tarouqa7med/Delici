@@ -123,6 +123,18 @@
         .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 p.description {
                 font-size: 12px;
         }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul {
+                column-gap: 8px !important;
+        }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul li {
+                border-radius: 6px !important;
+                width: 25px;
+                height: 25px;
+                font-size: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
                 flex-direction: column;
@@ -145,6 +157,26 @@
         }
         .Modal .container {
                 width: 90% !important;
+        }
+        .Modal.order-item .body .image p.price {
+                font-size: 10px !important;
+        }
+        .Modal.order-item .body .image button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+        .Modal.order-item .body .image button.prev {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+                left: 10px;
+        }
+        .Modal.order-item .body .image button.next {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+                right: 10px;
         }
 }
 @media screen and (min-width: 371px) and (max-width: 575.98px) {
@@ -266,6 +298,18 @@
         .Menu .container .body .content .food-menu .row .col-lg-6 .item .part2 p.description {
                 font-size: 12px;
         }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul {
+                column-gap: 8px !important;
+        }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul li {
+                border-radius: 6px !important;
+                width: 25px;
+                height: 25px;
+                font-size: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
                 flex-direction: column;
@@ -288,6 +332,26 @@
         }
         .Modal .container {
                 width: 90% !important;
+        }
+        .Modal.order-item .body .image p.price {
+                font-size: 10px !important;
+        }
+        .Modal.order-item .body .image button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+        .Modal.order-item .body .image button.prev {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+                left: 10px;
+        }
+        .Modal.order-item .body .image button.next {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+                right: 10px;
         }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
@@ -316,6 +380,18 @@
         }
         .Menu .container .body .content .food-menu .row .col-lg-6 .item {
                 padding-left: 0 !important;
+        }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul {
+                column-gap: 8px !important;
+        }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul li {
+                border-radius: 6px !important;
+                width: 25px;
+                height: 25px;
+                font-size: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
         }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
@@ -373,6 +449,18 @@
         }
         .Menu .container .body .content .food-menu .row .col-lg-6 .item {
                 padding-left: 0 !important;
+        }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul {
+                column-gap: 8px !important;
+        }
+        .OurChefs .container .body .row .col-lg-4 .item .frame ul li {
+                border-radius: 6px !important;
+                width: 25px;
+                height: 25px;
+                font-size: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
         }
         .ContactUs .container .myCard .form form .row {
                 display: flex;
