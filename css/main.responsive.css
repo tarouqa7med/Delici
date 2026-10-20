@@ -1,5 +1,8 @@
 
 @media screen and (max-width: 371px) {
+        .loadingPage > * {
+                transform: scale(0.5);
+        }
         nav .container .ul ul {
                 display: none !important;
         }
@@ -180,6 +183,9 @@
         }
 }
 @media screen and (min-width: 371px) and (max-width: 575.98px) {
+        .loadingPage > * {
+                transform: scale(0.75);
+        }
         nav .container .ul ul {
                 display: none !important;
         }
